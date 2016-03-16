@@ -84,7 +84,7 @@ namespace Assignment_1_VP
 
                 catch
                 {
-                    Console.WriteLine("\nYou Have Entered An Invalid Date");
+                    Console.WriteLine("\nYou Have Entered An Invalid Date please try again");
                 }
 
 
