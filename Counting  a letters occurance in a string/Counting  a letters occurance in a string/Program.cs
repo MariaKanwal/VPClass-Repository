@@ -15,12 +15,12 @@ namespace Counting__a_letters_occurance_in_a_string
             Console.WriteLine("Enter Text for checking occurence of each letter in that string");
             input = Console.ReadLine();
 
-            Console.WriteLine("Output");
+            Console.WriteLine("Output\n\n\n");
             var count = CharacterCount.Count(input);
 
             foreach (var character in count)
             {
-                Console.WriteLine("{0} is occuring {1} times", character.Key, character.Value);
+                Console.WriteLine("\n{0} is occuring {1} times", character.Key, character.Value);
             }
             Console.ReadLine();
         }

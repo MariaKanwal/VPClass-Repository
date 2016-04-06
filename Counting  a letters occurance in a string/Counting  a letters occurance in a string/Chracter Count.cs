@@ -8,23 +8,23 @@ namespace Counting__a_letters_occurance_in_a_string
 {
     class CharacterCount
     {
-        public static SortedDictionary<char, ulong> Count(string stringToCount)
+        public static SortedDictionary<char, ulong> Count(string input)
         {
-            SortedDictionary<char, ulong> characterCount = new SortedDictionary<char, ulong>();
+            SortedDictionary<char, ulong> Count = new SortedDictionary<char, ulong>();
 
-            foreach (var character in stringToCount)
+            foreach (var character in input)
             {
-                if (!characterCount.ContainsKey(character))
+                if (!Count.ContainsKey(character))
                 {
-                    characterCount.Add(character, 1);
+                    Count.Add(character, 1);
                 }
                 else
                 {
-                    characterCount[character]++;
+                    Count[character]++;
                 }
             }
 
-            return characterCount;
+            return Count;
         }
     }
 }
