@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.button6 = new System.Windows.Forms.Button();
@@ -53,7 +55,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.inputgroupbox = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -62,15 +64,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ImagePictureBox = new System.Windows.Forms.PictureBox();
             this.Cryptography_BY_RSA = new System.Windows.Forms.TabControl();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.ImagegroupBox = new System.Windows.Forms.GroupBox();
+            this.SaveImagebutton2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.ImageSourceTB = new System.Windows.Forms.TextBox();
             this.tabPage2.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -78,13 +80,11 @@
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.inputgroupbox.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImagePictureBox)).BeginInit();
             this.Cryptography_BY_RSA.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.ImagegroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -102,6 +102,24 @@
             this.tabPage2.Text = "Decryption";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.pictureBox2);
+            this.groupBox10.Location = new System.Drawing.Point(560, 20);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(308, 232);
+            this.groupBox10.TabIndex = 9;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = " ";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(6, 19);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(296, 207);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
             // groupBox9
             // 
@@ -218,7 +236,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(262, 33);
             this.button9.TabIndex = 6;
-            this.button9.Text = "Load Text File";
+            this.button9.Text = "Save Text File";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
@@ -260,12 +278,12 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.ImagegroupBox);
             this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.Encrytion);
             this.tabPage1.Controls.Add(this.groupBox4);
-            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Controls.Add(this.inputgroupbox);
             this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -295,7 +313,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(83, 35);
+            this.button5.Location = new System.Drawing.Point(83, 38);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(135, 38);
             this.button5.TabIndex = 2;
@@ -339,21 +357,21 @@
             this.textBox5.Size = new System.Drawing.Size(396, 20);
             this.textBox5.TabIndex = 0;
             // 
-            // groupBox3
+            // inputgroupbox
             // 
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.textBox4);
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Location = new System.Drawing.Point(18, 149);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(522, 170);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Input";
+            this.inputgroupbox.Controls.Add(this.button3);
+            this.inputgroupbox.Controls.Add(this.textBox4);
+            this.inputgroupbox.Controls.Add(this.textBox3);
+            this.inputgroupbox.Controls.Add(this.textBox2);
+            this.inputgroupbox.Controls.Add(this.label3);
+            this.inputgroupbox.Controls.Add(this.label2);
+            this.inputgroupbox.Controls.Add(this.label1);
+            this.inputgroupbox.Location = new System.Drawing.Point(18, 149);
+            this.inputgroupbox.Name = "inputgroupbox";
+            this.inputgroupbox.Size = new System.Drawing.Size(522, 170);
+            this.inputgroupbox.TabIndex = 3;
+            this.inputgroupbox.TabStop = false;
+            this.inputgroupbox.Text = "Input";
             // 
             // button3
             // 
@@ -419,7 +437,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.ImagePictureBox);
             this.groupBox2.Location = new System.Drawing.Point(558, 20);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(308, 232);
@@ -427,53 +445,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = " ";
             // 
-            // pictureBox1
+            // ImagePictureBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(6, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(296, 207);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(18, 20);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(522, 111);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Image";
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(142, 57);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(263, 33);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Load Image";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(447, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 35);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(25, 31);
-            this.textBox1.MaxLength = 8900000;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(396, 20);
-            this.textBox1.TabIndex = 0;
+            this.ImagePictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.ImagePictureBox.Location = new System.Drawing.Point(6, 19);
+            this.ImagePictureBox.Name = "ImagePictureBox";
+            this.ImagePictureBox.Size = new System.Drawing.Size(296, 207);
+            this.ImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImagePictureBox.TabIndex = 2;
+            this.ImagePictureBox.TabStop = false;
             // 
             // Cryptography_BY_RSA
             // 
@@ -485,23 +465,45 @@
             this.Cryptography_BY_RSA.Size = new System.Drawing.Size(882, 434);
             this.Cryptography_BY_RSA.TabIndex = 0;
             // 
-            // groupBox10
+            // ImagegroupBox
             // 
-            this.groupBox10.Controls.Add(this.pictureBox2);
-            this.groupBox10.Location = new System.Drawing.Point(560, 20);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(308, 232);
-            this.groupBox10.TabIndex = 9;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = " ";
+            this.ImagegroupBox.Controls.Add(this.SaveImagebutton2);
+            this.ImagegroupBox.Controls.Add(this.button1);
+            this.ImagegroupBox.Controls.Add(this.ImageSourceTB);
+            this.ImagegroupBox.Location = new System.Drawing.Point(18, 20);
+            this.ImagegroupBox.Name = "ImagegroupBox";
+            this.ImagegroupBox.Size = new System.Drawing.Size(522, 111);
+            this.ImagegroupBox.TabIndex = 1;
+            this.ImagegroupBox.TabStop = false;
+            this.ImagegroupBox.Text = "Image";
             // 
-            // pictureBox2
+            // SaveImagebutton2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(6, 19);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(296, 207);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.SaveImagebutton2.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveImagebutton2.Location = new System.Drawing.Point(142, 57);
+            this.SaveImagebutton2.Name = "SaveImagebutton2";
+            this.SaveImagebutton2.Size = new System.Drawing.Size(263, 33);
+            this.SaveImagebutton2.TabIndex = 2;
+            this.SaveImagebutton2.Text = "Save Image";
+            this.SaveImagebutton2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(447, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(56, 35);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // ImageSourceTB
+            // 
+            this.ImageSourceTB.Location = new System.Drawing.Point(25, 31);
+            this.ImageSourceTB.MaxLength = 8900000;
+            this.ImageSourceTB.Name = "ImageSourceTB";
+            this.ImageSourceTB.Size = new System.Drawing.Size(396, 20);
+            this.ImageSourceTB.TabIndex = 0;
             // 
             // Form1
             // 
@@ -512,6 +514,8 @@
             this.Name = "Form1";
             this.Text = "Cryptography";
             this.tabPage2.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
@@ -523,15 +527,13 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.inputgroupbox.ResumeLayout(false);
+            this.inputgroupbox.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImagePictureBox)).EndInit();
             this.Cryptography_BY_RSA.ResumeLayout(false);
-            this.groupBox10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.ImagegroupBox.ResumeLayout(false);
+            this.ImagegroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -542,7 +544,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl Cryptography_BY_RSA;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox inputgroupbox;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
@@ -551,11 +553,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox ImagePictureBox;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button button8;
@@ -580,6 +578,10 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.GroupBox ImagegroupBox;
+        private System.Windows.Forms.Button SaveImagebutton2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox ImageSourceTB;
 
     }
 }
