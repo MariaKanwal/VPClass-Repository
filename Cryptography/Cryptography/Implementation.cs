@@ -13,12 +13,13 @@ namespace Cryptography
 
         public static byte[] Conversion_To_BitMap(Image i)
         {
+
+            // helps you read image in form of bytes
             byte[] byte_object = new byte[] 
             {
                 0,0
             };
 
-            // helps you read image in form of bytes
 
 
             MemoryStream memory_stream_object = new MemoryStream(); 
