@@ -13,6 +13,12 @@ namespace Cryptography
     public partial class Form1 : Form
     {
 
+
+        static int Prime_Number_1;
+        static int Prime_Number_2;
+        static int Value_of_E;
+
+
         static string Load_and_Save = "";
         public Form1()
         {
@@ -31,7 +37,10 @@ namespace Cryptography
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            if (Assign_Values_Button3.Text == "Assign Values")
+            {
+                //is prime function needed for acceptance or denail 
+            }
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -49,13 +58,13 @@ namespace Cryptography
             {
                 ImageSourceTB.Text = OPENIMAGE.FileName; // For Taking Image from User
                 ImagePictureBox.Image = Image.FromFile(ImageSourceTB.Text); //shows image in the Picture Box
-                SaveImagebutton2.Enabled = true; // Now Button Enabled for loading Image
+                SaveImage_Bbutton2.Enabled = true; // Now Button Enabled for loading Image
 
             }
 
             else
             {
-                SaveImagebutton2.Enabled = false; // Button Disabled by default 
+                SaveImage_Bbutton2.Enabled = false; // Button Disabled by default 
             }
 
 

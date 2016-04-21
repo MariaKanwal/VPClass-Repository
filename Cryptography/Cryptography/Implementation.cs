@@ -10,6 +10,30 @@ namespace Cryptography
 {
     class Implementation
     {
+        // Incomplete function 
+        public static bool Prime_Number_Checker(int input)
+        {
+            if ((input & 1 )== 0)
+            {
+
+            if (input == 2)
+                   {
+                return true;
+            
+                   }
+
+            else
+                   {
+                return false;
+                   }
+            }
+
+            return true;
+        }
+
+
+
+
 
         public static byte[] Conversion_To_BitMap(Image i)
         {
@@ -20,7 +44,6 @@ namespace Cryptography
                 0,0
             };
 
-            //check
 
             MemoryStream memory_stream_object = new MemoryStream(); 
             
@@ -28,14 +51,13 @@ namespace Cryptography
             //as a backstore so further work can be performed on it 
 
             Bitmap bitmap_oject = new Bitmap(i);
+          
 
             // reading each byte from your memory 
             byte_object = memory_stream_object.ToArray();
 
             // returing the converted image to the load image button after conversion 
-            return (byte_object);
-
-
+            return byte_object;
         }
     }
 }
