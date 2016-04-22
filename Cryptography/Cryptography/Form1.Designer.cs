@@ -49,7 +49,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Image_groupBox = new System.Windows.Forms.GroupBox();
-            this.SaveImage_Bbutton2 = new System.Windows.Forms.Button();
+            this.SaveImage_Button2 = new System.Windows.Forms.Button();
             this.Select_button1 = new System.Windows.Forms.Button();
             this.ImageSourceTB = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -294,7 +294,7 @@
             // 
             // Image_groupBox
             // 
-            this.Image_groupBox.Controls.Add(this.SaveImage_Bbutton2);
+            this.Image_groupBox.Controls.Add(this.SaveImage_Button2);
             this.Image_groupBox.Controls.Add(this.Select_button1);
             this.Image_groupBox.Controls.Add(this.ImageSourceTB);
             this.Image_groupBox.Location = new System.Drawing.Point(18, 20);
@@ -304,15 +304,16 @@
             this.Image_groupBox.TabStop = false;
             this.Image_groupBox.Text = "Image";
             // 
-            // SaveImage_Bbutton2
+            // SaveImage_Button2
             // 
-            this.SaveImage_Bbutton2.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveImage_Bbutton2.Location = new System.Drawing.Point(142, 57);
-            this.SaveImage_Bbutton2.Name = "SaveImage_Bbutton2";
-            this.SaveImage_Bbutton2.Size = new System.Drawing.Size(263, 33);
-            this.SaveImage_Bbutton2.TabIndex = 2;
-            this.SaveImage_Bbutton2.Text = "Save Image";
-            this.SaveImage_Bbutton2.UseVisualStyleBackColor = true;
+            this.SaveImage_Button2.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveImage_Button2.Location = new System.Drawing.Point(142, 57);
+            this.SaveImage_Button2.Name = "SaveImage_Button2";
+            this.SaveImage_Button2.Size = new System.Drawing.Size(263, 33);
+            this.SaveImage_Button2.TabIndex = 2;
+            this.SaveImage_Button2.Text = "Save Image";
+            this.SaveImage_Button2.UseVisualStyleBackColor = true;
+            this.SaveImage_Button2.Click += new System.EventHandler(this.SaveImage_Bbutton2_Click);
             // 
             // Select_button1
             // 
@@ -323,6 +324,7 @@
             this.Select_button1.TabIndex = 1;
             this.Select_button1.Text = "...";
             this.Select_button1.UseVisualStyleBackColor = true;
+            this.Select_button1.Click += new System.EventHandler(this.Select_button1_Click);
             // 
             // ImageSourceTB
             // 
@@ -579,7 +581,7 @@
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.GroupBox Image_groupBox;
-        private System.Windows.Forms.Button SaveImage_Bbutton2;
+        private System.Windows.Forms.Button SaveImage_Button2;
         private System.Windows.Forms.Button Select_button1;
         private System.Windows.Forms.TextBox ImageSourceTB;
 

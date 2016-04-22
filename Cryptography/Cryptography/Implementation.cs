@@ -10,13 +10,13 @@ namespace Cryptography
 {
     class Implementation
     {
-        // Incomplete function 
+         // Function written to check weather user entered a prime number in our test Box
         public static bool Prime_Number_Checker(int input)
         {
             if ((input & 1 )== 0)
             {
 
-            if (input == 2)
+            if (input < 2)
                    {
                 return true;
             
@@ -28,10 +28,18 @@ namespace Cryptography
                    }
             }
 
-            return true;
+            for (int i = 3; i <= input;i+=2)
+            {
+                if(input%i==0)
+                {
+                    return false;
+                }
+            }
+
+                return true;
         }
 
-
+        
 
 
 

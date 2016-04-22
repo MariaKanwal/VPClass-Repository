@@ -39,7 +39,17 @@ namespace Cryptography
         {
             if (Assign_Values_Button3.Text == "Assign Values")
             {
-                //is prime function needed for acceptance or denail 
+                // To take Input From User and Make sure that all of the textboxes had values
+
+                if(textBox_PrimeNO_1.Text=="" || textBox_PrimeNo_2.Text=="" || textBox_Value_of_E.Text=="")
+                {
+                    MessageBox.Show("Please Fill All The Assocaited Feilds");
+                }
+
+                else
+                {
+
+                }
             }
         }
 
@@ -48,7 +58,7 @@ namespace Cryptography
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Select_button1_Click(object sender, EventArgs e)
         {
 
             OpenFileDialog OPENIMAGE = new OpenFileDialog();
@@ -58,19 +68,19 @@ namespace Cryptography
             {
                 ImageSourceTB.Text = OPENIMAGE.FileName; // For Taking Image from User
                 ImagePictureBox.Image = Image.FromFile(ImageSourceTB.Text); //shows image in the Picture Box
-                SaveImage_Bbutton2.Enabled = true; // Now Button Enabled for loading Image
+                SaveImage_Button2.Enabled = true; // Now Button Enabled for loading Image
 
             }
 
             else
             {
-                SaveImage_Bbutton2.Enabled = false; // Button Disabled by default 
+                SaveImage_Button2.Enabled = false; // Button Disabled by default 
             }
 
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void SaveImage_Bbutton2_Click(object sender, EventArgs e)
         {
             Load_and_Save = BitConverter.ToString(Implementation.Conversion_To_BitMap(ImagePictureBox.Image));
             //For Calling the image to bit map converter function from implementation class with help of BITCONVERTER library 
@@ -80,6 +90,7 @@ namespace Cryptography
             inputgroupbox.Enabled = true;
 
         }
+
     }
 }
 
