@@ -11,6 +11,8 @@ namespace Cryptography
     class Implementation
     {
          // Function written to check weather user entered a prime number in our test Box
+
+        //something is wrong with the function 
         public static bool Prime_Number_Checker(int input)
         {
             if ((input & 1 )== 0)

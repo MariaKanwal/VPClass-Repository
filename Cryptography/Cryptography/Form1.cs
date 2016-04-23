@@ -48,6 +48,41 @@ namespace Cryptography
 
                 else
                 {
+                    
+                    // Assigning value for First Prime Number 
+                    //Calls the Prime_Number_Checker Function from Implemenattion class 
+
+                    //If number entered is a prime Number it is assigned 
+                    if (Cryptography.Implementation.Prime_Number_Checker(int.Parse(textBox_PrimeNO_1.Text)))
+                    {
+                        Prime_Number_1 = int.Parse(textBox_PrimeNO_1.Text);
+                    }
+                    // If number is not a prime number user is informed 
+                    else
+                    {
+                        textBox_PrimeNO_1.Text= "";
+                        MessageBox.Show(" You didn't Enter A Prime Number , Please TRY AGAIN");
+                        return;
+                    }
+
+
+
+                    //Assign Value for Secound Prime Number 
+                    //Number entered by User was a Prime Number
+                    if (Cryptography.Implementation.Prime_Number_Checker(int.Parse(textBox_PrimeNo_2.Text)))
+                    {
+                        Prime_Number_2=int.Parse(textBox_PrimeNo_2.Text);
+                    }
+
+                     // Number Entered By User was not Prime so User was Informed and the Text Box was cleared for taking new value
+                    else
+                    {
+                        textBox_PrimeNo_2.Text = "";
+                        MessageBox.Show("You didn't Enter A Prime Number , Please TRY AGAIN");
+                        return;
+                    }
+
+
 
                 }
             }
