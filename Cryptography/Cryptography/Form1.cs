@@ -81,8 +81,11 @@ namespace Cryptography
                         MessageBox.Show("You didn't Enter A Prime Number , Please TRY AGAIN");
                         return;
                     }
-
-
+                    
+                 
+                    // Taking Value Of E 
+                    Value_of_E= int.Parse(textBox_Value_of_E.Text);
+                    
 
                 }
             }
@@ -127,5 +130,7 @@ namespace Cryptography
         }
 
     }
+
+
 }
 

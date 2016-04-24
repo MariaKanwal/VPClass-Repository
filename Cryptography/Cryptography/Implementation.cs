@@ -15,34 +15,34 @@ namespace Cryptography
         //something is wrong with the function 
         public static bool Prime_Number_Checker(int input)
         {
-            if ((input & 1 )== 0)
+            if ((input & 1) == 0)
             {
 
-            if (input < 2)
-                   {
-                return true;
-            
-                   }
+                if (input < 2)
+                {
+                    return true;
 
-            else
-                   {
-                return false;
-                   }
-            }
+                }
 
-            for (int i = 3; i <= input;i+=2)
-            {
-                if(input%i==0)
+                else
                 {
                     return false;
                 }
             }
 
-                return true;
+            for (int i = 3; i <= input; i += 2)
+            {
+                if (input % i == 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
-        
 
+      
 
 
         public static byte[] Conversion_To_BitMap(Image i)
@@ -69,5 +69,8 @@ namespace Cryptography
             // returing the converted image to the load image button after conversion 
             return byte_object;
         }
+
+
+
     }
 }

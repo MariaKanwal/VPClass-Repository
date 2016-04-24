@@ -428,23 +428,23 @@
             // 
             // textBox_Value_of_E
             // 
-            this.textBox_Value_of_E.Location = new System.Drawing.Point(259, 83);
+            this.textBox_Value_of_E.Location = new System.Drawing.Point(270, 83);
             this.textBox_Value_of_E.Name = "textBox_Value_of_E";
-            this.textBox_Value_of_E.Size = new System.Drawing.Size(244, 20);
+            this.textBox_Value_of_E.Size = new System.Drawing.Size(233, 20);
             this.textBox_Value_of_E.TabIndex = 5;
             // 
             // textBox_PrimeNo_2
             // 
-            this.textBox_PrimeNo_2.Location = new System.Drawing.Point(259, 54);
+            this.textBox_PrimeNo_2.Location = new System.Drawing.Point(270, 54);
             this.textBox_PrimeNo_2.Name = "textBox_PrimeNo_2";
-            this.textBox_PrimeNo_2.Size = new System.Drawing.Size(244, 20);
+            this.textBox_PrimeNo_2.Size = new System.Drawing.Size(233, 20);
             this.textBox_PrimeNo_2.TabIndex = 4;
             // 
             // textBox_PrimeNO_1
             // 
-            this.textBox_PrimeNO_1.Location = new System.Drawing.Point(259, 26);
+            this.textBox_PrimeNO_1.Location = new System.Drawing.Point(270, 27);
             this.textBox_PrimeNO_1.Name = "textBox_PrimeNO_1";
-            this.textBox_PrimeNO_1.Size = new System.Drawing.Size(244, 20);
+            this.textBox_PrimeNO_1.Size = new System.Drawing.Size(233, 20);
             this.textBox_PrimeNO_1.TabIndex = 3;
             // 
             // label3
@@ -453,9 +453,9 @@
             this.label3.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(21, 84);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(232, 19);
+            this.label3.Size = new System.Drawing.Size(243, 19);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Value of \"E\" (Co-Prime Number)";
+            this.label3.Text = "Value of \"E\" (Encrytion Exponent)";
             // 
             // label2
             // 
