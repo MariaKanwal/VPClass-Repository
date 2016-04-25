@@ -49,11 +49,12 @@ namespace Cryptography
                 else
                 {
                     
+
                     // Assigning value for First Prime Number 
                     //Calls the Prime_Number_Checker Function from Implemenattion class 
 
                     //If number entered is a prime Number it is assigned 
-                    if (Cryptography.Implementation.Prime_Number_Checker(int.Parse(textBox_PrimeNO_1.Text)))
+                    if (Cryptography.Checker.Prime_Number_Checker(int.Parse(textBox_PrimeNO_1.Text)))
                     {
                         Prime_Number_1 = int.Parse(textBox_PrimeNO_1.Text);
                     }
@@ -69,7 +70,7 @@ namespace Cryptography
 
                     //Assign Value for Secound Prime Number 
                     //Number entered by User was a Prime Number
-                    if (Cryptography.Implementation.Prime_Number_Checker(int.Parse(textBox_PrimeNo_2.Text)))
+                    if (Cryptography.Checker.Prime_Number_Checker(int.Parse(textBox_PrimeNo_2.Text)))
                     {
                         Prime_Number_2=int.Parse(textBox_PrimeNo_2.Text);
                     }
@@ -81,13 +82,34 @@ namespace Cryptography
                         MessageBox.Show("You didn't Enter A Prime Number , Please TRY AGAIN");
                         return;
                     }
-                    
-                 
-                    // Taking Value Of E 
-                    Value_of_E= int.Parse(textBox_Value_of_E.Text);
-                    
+
+
+
+                    //Assign Value For Value of Encryion Exponenet 
+                    // Calculating Value of "n" to check co prime between n and E
+                    int n = (Prime_Number_1-1) * (Prime_Number_2-1);
+
+                    //If e was coprime of n
+                    if (Cryptography.Checker.CoPrime_Checker(n,(int.Parse(textBox_Value_of_E.Text))))
+                    {
+                        Value_of_E = int.Parse(textBox_Value_of_E.Text);
+                    }
+                    // if e was not coprime of n
+                    else
+                    {
+                        textBox_Value_of_E.Text = "";
+                        MessageBox.Show("Please Enter a Realitive Prime Number");
+                        return;
+                    }
 
                 }
+
+                
+            }
+
+            else
+            {
+                
             }
         }
 

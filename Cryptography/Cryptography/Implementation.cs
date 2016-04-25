@@ -10,40 +10,6 @@ namespace Cryptography
 {
     class Implementation
     {
-         // Function written to check weather user entered a prime number in our test Box
-
-        //something is wrong with the function 
-        public static bool Prime_Number_Checker(int input)
-        {
-            if ((input & 1) == 0)
-            {
-
-                if (input < 2)
-                {
-                    return true;
-
-                }
-
-                else
-                {
-                    return false;
-                }
-            }
-
-            for (int i = 3; i <= input; i += 2)
-            {
-                if (input % i == 0)
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-
-      
-
 
         public static byte[] Conversion_To_BitMap(Image i)
         {
