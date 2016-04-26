@@ -10,40 +10,56 @@ namespace Cryptography
     {
         // this function is written to check weather user entered a coprime number for the value of Encryption Exponent 
         //Co Prime or Relative Prime Means that the prime numbers and Encrytion Exponent share no common divisor other than 1.
-        public static bool CoPrime_Checker(long input1, long input2)
+        public static bool CoPrime_Checker(int input1, int input2)
         {
-
-            if (((input1 | input2) & 1) == 0)
+            // condtion executes if both are even numbers then they are not coprime 
+            if (((input1 | input2) & 1) == 0)    
                 return false;
 
-            while ((input1 & input2) == 0) input1 >>= 1;
+
+            //if one of the orginal numbers is odd  
+            while ((input1 & 1) == 0) 
+                     input1 >>= 1;       
+
+            // if one of the orginal numbers is coprime 
             if (input1 == 1)
                 return true;
 
             do
             {
-                while ((input2 & 1) == 0) input2 >>= 1;
+                // Elaminate all factors of 2 from "input2" 
+                while ((input2 & 1) == 0) 
+                       input2 >>= 1;
+
+
+                // when one of the orginal input numbers is coprime 
                 if (input2 == 1)
                     return true;
 
-                if (input2 > input1)
+
+                //swapping done to ensure that input2 >= input1
+                if (input1 > input2)
                 {
-                    long temp = input2;
+                    int temp = input2;
                     input2 = input1;
                     input1 = temp;
                 }
 
+
+                //Done by the logic GCD(input1 , input2) = GCD(input1 , input2 - input1)
                 input2 -= input1;
 
             }
 
             while (input2 != 0);
+
+            //This will be executed when input2 has 0 in it along with GCD(input1 , input2) = input1 > 1
             return false;
         }
 
 
-        // Function written to check weather user entered a prime number in our test Box
 
+        // Function written to check weather user entered a prime number in our test Box
         //something is wrong with the function 
         public static bool Prime_Number_Checker(int input)
         {

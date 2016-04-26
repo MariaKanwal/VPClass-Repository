@@ -88,6 +88,7 @@ namespace Cryptography
                     //Assign Value For Value of Encryion Exponenet 
                     // Calculating Value of "n" to check co prime between n and E
                     int n = (Prime_Number_1-1) * (Prime_Number_2-1);
+                    
 
                     //If e was coprime of n
                     if (Cryptography.Checker.CoPrime_Checker(n,(int.Parse(textBox_Value_of_E.Text))))
@@ -104,12 +105,21 @@ namespace Cryptography
 
                 }
 
+                textBox_PrimeNO_1.Enabled = false;
+                textBox_PrimeNo_2.Enabled = false;
+                textBox_Value_of_E.Enabled = false;
+
                 
             }
 
             else
             {
-                
+                textBox_PrimeNO_1.Text = "";
+                textBox_PrimeNo_2.Text = "";
+                textBox_Value_of_E.Text = "";
+                textBox_PrimeNO_1.Enabled = true;
+                textBox_PrimeNo_2.Enabled = true;
+                textBox_Value_of_E.Enabled = true;
             }
         }
 
