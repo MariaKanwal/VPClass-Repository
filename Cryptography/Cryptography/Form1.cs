@@ -46,6 +46,8 @@ namespace Cryptography
                     MessageBox.Show("Please Fill All The Assocaited Feilds");
                 }
 
+
+
                 else
                 {
                     
@@ -103,12 +105,8 @@ namespace Cryptography
                         return;
                     }
 
+                    MessageBox.Show("You Have Sucessfuly Assigned all values");
                 }
-
-                textBox_PrimeNO_1.Enabled = false;
-                textBox_PrimeNo_2.Enabled = false;
-                textBox_Value_of_E.Enabled = false;
-
                 
             }
 
@@ -117,9 +115,6 @@ namespace Cryptography
                 textBox_PrimeNO_1.Text = "";
                 textBox_PrimeNo_2.Text = "";
                 textBox_Value_of_E.Text = "";
-                textBox_PrimeNO_1.Enabled = true;
-                textBox_PrimeNo_2.Enabled = true;
-                textBox_Value_of_E.Enabled = true;
             }
         }
 

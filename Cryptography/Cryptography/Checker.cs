@@ -59,14 +59,14 @@ namespace Cryptography
 
 
 
-        // Function written to check weather user entered a prime number in our test Box
-        //something is wrong with the function 
+        // Function written to check weather user entered a prime number 
+       // This function is manily used for Checking the Values in Prime No 1 and Prime No 2 Text box
         public static bool Prime_Number_Checker(int input)
         {
             if ((input & 1) == 0)
             {
 
-                if (input < 2)
+                if (input == 2)
                 {
                     return true;
 
@@ -78,7 +78,7 @@ namespace Cryptography
                 }
             }
 
-            for (int i = 3; i <= input; i += 2)
+            for (int i = 3; (i*i) <= input; i += 2)
             {
                 if (input % i == 0)
                 {
@@ -86,7 +86,7 @@ namespace Cryptography
                 }
             }
 
-            return true;
+            return input != 1 ;
         }
     }
 }
