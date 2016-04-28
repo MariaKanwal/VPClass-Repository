@@ -20,6 +20,8 @@ namespace Cryptography
 
 
         static string Load_and_Save = "";
+
+
         public Form1()
         {
             InitializeComponent();
@@ -105,6 +107,7 @@ namespace Cryptography
                         return;
                     }
 
+                    //To show that All the Values are assgined for Encrytion 
                     MessageBox.Show("You Have Sucessfuly Assigned all values");
                 }
                 
@@ -127,19 +130,18 @@ namespace Cryptography
         {
 
             OpenFileDialog OPENIMAGE = new OpenFileDialog();
-            OPENIMAGE.Filter = "ImageFile(*.JPG)|*.JPG";
+            OPENIMAGE.Filter = "ImageFile(*.JPG)|*.JPG";      // only accepts JPG Files
 
             if (OPENIMAGE.ShowDialog() == DialogResult.OK)
             {
-                ImageSourceTB.Text = OPENIMAGE.FileName; // For Taking Image from User
-                ImagePictureBox.Image = Image.FromFile(ImageSourceTB.Text); //shows image in the Picture Box
-                SaveImage_Button2.Enabled = true; // Now Button Enabled for loading Image
+                Image_Source_textbox.Text = OPENIMAGE.FileName; // For Taking Image from User
+                ImagePictureBox.Image = Image.FromFile(Image_Source_textbox.Text); //shows image in the Picture Box
 
             }
 
             else
             {
-                SaveImage_Button2.Enabled = false; // Button Disabled by default 
+
             }
 
 
@@ -147,12 +149,26 @@ namespace Cryptography
 
         private void SaveImage_Bbutton2_Click(object sender, EventArgs e)
         {
-            Load_and_Save = BitConverter.ToString(Implementation.Conversion_To_BitMap(ImagePictureBox.Image));
+            Load_and_Save = BitConverter.ToString(Conversion.Conversion_To_BitMap(ImagePictureBox.Image));
             //For Calling the image to bit map converter function from implementation class with help of BITCONVERTER library 
 
             MessageBox.Show("Image Selected was Saved For Encryption ");
 
-            inputgroupbox.Enabled = true;
+        }
+
+
+    // Incomplete 
+        private void Store_Location_button4_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog Save_Location_Object = new SaveFileDialog();
+            Save_Location_Object.Filter = "Text|*.txt";
+            Save_Location_Object.RestoreDirectory = true;
+
+            if(Save_Location_Object.ShowDialog() == DialogResult.OK)
+            {
+                //Save_Location_textBox = Save_Location_Object.FileName;
+            }
+
 
         }
 

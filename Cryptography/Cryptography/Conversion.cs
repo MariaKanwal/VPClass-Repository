@@ -8,7 +8,7 @@ using System.IO;
 
 namespace Cryptography
 {
-    class Implementation
+    class Conversion
     {
 
         public static byte[] Conversion_To_BitMap(Image i)
@@ -35,8 +35,6 @@ namespace Cryptography
             // returing the converted image to the load image button after conversion 
             return byte_object;
         }
-
-
 
     }
 }
