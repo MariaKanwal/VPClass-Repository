@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Cryptography
 {
-    public partial class Form1 : Form
+    public partial class Crytography_Form : Form
     {
 
 
@@ -22,15 +22,11 @@ namespace Cryptography
         static string Load_and_Save = "";
 
 
-        public Form1()
+        public Crytography_Form()
         {
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
@@ -91,7 +87,7 @@ namespace Cryptography
 
                     //Assign Value For Value of Encryion Exponenet 
                     // Calculating Value of "n" to check co prime between n and E
-                    int n = (Prime_Number_1-1) * (Prime_Number_2-1);
+                    int n = Cryptography.RSA_Algorithm_Implementation.Value_of_N_Calculator((Prime_Number_1 - 1), (Prime_Number_2 - 1));
                     
 
                     //If e was coprime of n
@@ -157,19 +153,61 @@ namespace Cryptography
         }
 
 
-    // Incomplete 
+  
         private void Store_Location_button4_Click(object sender, EventArgs e)
         {
+            //To Display a Save Dialouge so User Can Save Image 
             SaveFileDialog Save_Location_Object = new SaveFileDialog();
-            Save_Location_Object.Filter = "Text|*.txt";
-            Save_Location_Object.RestoreDirectory = true;
 
+            //File Type allocated here
+            Save_Location_Object.Filter = "Text|*.txt";
+
+            //Assign a Location for Document to be Saved 
             if(Save_Location_Object.ShowDialog() == DialogResult.OK)
             {
-                //Save_Location_textBox = Save_Location_Object.FileName;
+                Save_Location_textBox.Text = Save_Location_Object.FileName;
+            }
+
+            // Else show the TextBox as Empty
+            else
+            {
+                Save_Location_textBox.Text = "";
             }
 
 
+        }
+
+        private void Save_Location_textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_PrimeNo_2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+    //Incomplete
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //Calculating Value of N by calling Function From RSA_Algorithm Implementation Class on both Prime Numbers
+            int N;
+            N = Cryptography.RSA_Algorithm_Implementation.Value_of_N_Calculator(Prime_Number_1, Prime_Number_2);
+
+
+            
+            String encrypt_image;
+          //  encrypt_image= Cryptography.Encryption.Encryption_Of_Image(Load_and_Save);
         }
 
     }
