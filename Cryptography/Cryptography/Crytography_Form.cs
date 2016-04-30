@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Cryptography
 {
@@ -197,7 +198,7 @@ namespace Cryptography
 
         }
 
-    //Incomplete
+
         private void button5_Click(object sender, EventArgs e)
         {
             //Calculating Value of N by calling Function From RSA_Algorithm Implementation Class on both Prime Numbers
@@ -205,9 +206,37 @@ namespace Cryptography
             N = Cryptography.RSA_Algorithm_Implementation.Value_of_N_Calculator(Prime_Number_1, Prime_Number_2);
 
 
-            
-            String encrypt_image;
-          //  encrypt_image= Cryptography.Encryption.Encryption_Of_Image(Load_and_Save);
+           //Encrytion of Image function called on Load and Save object that has image stored in form of bitmap 
+           String encrypt_image;
+          encrypt_image= Encryption_Of_Image(Load_and_Save);
+
+        // To Create A new File Write that Specific String to that File and then Close that File
+          File.WriteAllText(Save_Location_textBox.Text, encrypt_image);
+
+          MessageBox.Show("Encryption Successfully Performed and File was Saved at Your Specipied Location");
+
+        }
+
+
+
+        //Incomplete
+
+
+        // Function for Encrytion of Image
+        public string Encryption_Of_Image(string Input_Image)
+        {
+           // Input Image Recieved Assigned to Converted_Image Object
+            string Converted_Image_To_ByteArray = Input_Image;
+
+            //String Converted To Char Array 
+            char[] Array = Converted_Image_To_ByteArray.ToCharArray();
+
+            for (int i = 0; i < Array.Length; i++ )
+            {
+
+            }
+
+                return Converted_Image_To_ByteArray;
         }
 
     }
