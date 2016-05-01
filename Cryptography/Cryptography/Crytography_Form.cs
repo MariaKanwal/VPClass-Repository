@@ -19,8 +19,12 @@ namespace Cryptography
         static int Prime_Number_2;
         static int Value_of_E;
 
+  
 
         static string Load_and_Save = "";
+
+
+        int N;
 
 
         public Crytography_Form()
@@ -88,11 +92,11 @@ namespace Cryptography
 
                     //Assign Value For Value of Encryion Exponenet 
                     // Calculating Value of "n" to check co prime between n and E
-                    int n = Cryptography.RSA_Algorithm_Implementation.Value_of_N_Calculator((Prime_Number_1 - 1), (Prime_Number_2 - 1));
+                   int  VALUE_OF_PHI= Cryptography.RSA_Algorithm_Implementation.Value_of_N_Calculator((Prime_Number_1 - 1), (Prime_Number_2 - 1));
                     
 
                     //If e was coprime of n
-                    if (Cryptography.Checker.CoPrime_Checker(n,(int.Parse(textBox_Value_of_E.Text))))
+                    if (Cryptography.Checker.CoPrime_Checker(VALUE_OF_PHI,(int.Parse(textBox_Value_of_E.Text))))
                     {
                         Value_of_E = int.Parse(textBox_Value_of_E.Text);
                     }
@@ -202,7 +206,7 @@ namespace Cryptography
         private void button5_Click(object sender, EventArgs e)
         {
             //Calculating Value of N by calling Function From RSA_Algorithm Implementation Class on both Prime Numbers
-            int N;
+          
             N = Cryptography.RSA_Algorithm_Implementation.Value_of_N_Calculator(Prime_Number_1, Prime_Number_2);
 
 
@@ -213,30 +217,34 @@ namespace Cryptography
         // To Create A new File Write that Specific String to that File and then Close that File
           File.WriteAllText(Save_Location_textBox.Text, encrypt_image);
 
-          MessageBox.Show("Encryption Successfully Performed and File was Saved at Your Specipied Location");
+          MessageBox.Show("Encryption Successfully Performed and File was Saved at Your Specified Location");
 
         }
 
 
 
-        //Incomplete
-
-
+        // Incomplete
         // Function for Encrytion of Image
         public string Encryption_Of_Image(string Input_Image)
         {
+           String temp ="" ;
            // Input Image Recieved Assigned to Converted_Image Object
             string Converted_Image_To_ByteArray = Input_Image;
 
             //String Converted To Char Array 
             char[] Array = Converted_Image_To_ByteArray.ToCharArray();
 
-            for (int i = 0; i < Array.Length; i++ )
+            for (int i = 1; i < Array.Length; i++ )
             {
-
+            
+              if (temp == "")
+                {
+                    temp = temp + Cryptography.RSA_Algorithm_Implementation.Modulus(Array[i], Value_of_E, N);
+                   
+                }
             }
 
-                return Converted_Image_To_ByteArray;
+                return temp;
         }
 
     }

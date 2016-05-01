@@ -14,5 +14,18 @@ namespace Cryptography
         {
             return((Prime_NO_1) * ( Prime_NO_2));
         }
+
+
+
+
+       
+        // Incomplete 
+        public static int Modulus(int array, int Value_E, int N)
+        { 
+            int temp = 1;
+            temp = temp* array % N;
+            temp = temp % N;
+            return temp;
+        }
     }
 }
