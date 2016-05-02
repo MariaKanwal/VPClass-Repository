@@ -244,7 +244,7 @@ namespace Cryptography
 
               ENCRYTION_progressBar.Value = i;
 
-             //Generating Number Accoding to Algorithm 
+          
               if (temp == "")
               {
                     temp = temp + Cryptography.RSA_Algorithm_Implementation.Generator(Array[i], Value_of_E, N);
