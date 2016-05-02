@@ -19,7 +19,7 @@ namespace Cryptography
         static int Prime_Number_2;
         static int Value_of_E;
 
-  
+
 
         static string Load_and_Save = "";
 
@@ -44,7 +44,7 @@ namespace Cryptography
             {
                 // To take Input From User and Make sure that all of the textboxes had values
 
-                if(textBox_PrimeNO_1.Text=="" || textBox_PrimeNo_2.Text=="" || textBox_Value_of_E.Text=="")
+                if (textBox_PrimeNO_1.Text == "" || textBox_PrimeNo_2.Text == "" || textBox_Value_of_E.Text == "")
                 {
                     MessageBox.Show("Please Fill All The Assocaited Feilds");
                 }
@@ -53,7 +53,7 @@ namespace Cryptography
 
                 else
                 {
-                    
+
 
                     // Assigning value for First Prime Number 
                     //Calls the Prime_Number_Checker Function from Implemenattion class 
@@ -66,7 +66,7 @@ namespace Cryptography
                     // If number is not a prime number user is informed 
                     else
                     {
-                        textBox_PrimeNO_1.Text= "";
+                        textBox_PrimeNO_1.Text = "";
                         MessageBox.Show(" You didn't Enter A Prime Number , Please TRY AGAIN");
                         return;
                     }
@@ -77,7 +77,7 @@ namespace Cryptography
                     //Number entered by User was a Prime Number
                     if (Cryptography.Checker.Prime_Number_Checker(int.Parse(textBox_PrimeNo_2.Text)))
                     {
-                        Prime_Number_2=int.Parse(textBox_PrimeNo_2.Text);
+                        Prime_Number_2 = int.Parse(textBox_PrimeNo_2.Text);
                     }
 
                      // Number Entered By User was not Prime so User was Informed and the Text Box was cleared for taking new value
@@ -92,11 +92,11 @@ namespace Cryptography
 
                     //Assign Value For Value of Encryion Exponenet 
                     // Calculating Value of "n" to check co prime between n and E
-                   int  VALUE_OF_PHI= Cryptography.RSA_Algorithm_Implementation.Value_of_N_Calculator((Prime_Number_1 - 1), (Prime_Number_2 - 1));
-                    
+                    int VALUE_OF_PHI = Cryptography.RSA_Algorithm_Implementation.Value_of_N_Calculator((Prime_Number_1 - 1), (Prime_Number_2 - 1));
+
 
                     //If e was coprime of n
-                    if (Cryptography.Checker.CoPrime_Checker(VALUE_OF_PHI,(int.Parse(textBox_Value_of_E.Text))))
+                    if (Cryptography.Checker.CoPrime_Checker(VALUE_OF_PHI, (int.Parse(textBox_Value_of_E.Text))))
                     {
                         Value_of_E = int.Parse(textBox_Value_of_E.Text);
                     }
@@ -111,7 +111,7 @@ namespace Cryptography
                     //To show that All the Values are assgined for Encrytion 
                     MessageBox.Show("You Have Sucessfuly Assigned all values");
                 }
-                
+
             }
 
             else
@@ -158,7 +158,7 @@ namespace Cryptography
         }
 
 
-  
+
         private void Store_Location_button4_Click(object sender, EventArgs e)
         {
             //To Display a Save Dialouge so User Can Save Image 
@@ -168,7 +168,7 @@ namespace Cryptography
             Save_Location_Object.Filter = "Text|*.txt";
 
             //Assign a Location for Document to be Saved 
-            if(Save_Location_Object.ShowDialog() == DialogResult.OK)
+            if (Save_Location_Object.ShowDialog() == DialogResult.OK)
             {
                 Save_Location_textBox.Text = Save_Location_Object.FileName;
             }
@@ -206,18 +206,18 @@ namespace Cryptography
         private void button5_Click(object sender, EventArgs e)
         {
             //Calculating Value of N by calling Function From RSA_Algorithm Implementation Class on both Prime Numbers
-          
+
             N = Cryptography.RSA_Algorithm_Implementation.Value_of_N_Calculator(Prime_Number_1, Prime_Number_2);
 
 
-           //Encrytion of Image function called on Load and Save object that has image stored in form of bitmap 
-           String encrypt_image;
-          encrypt_image= Encryption_Of_Image(Load_and_Save);
+            //Encrytion of Image function called on Load and Save object that has image stored in form of bitmap 
+            String encrypt_image;
+            encrypt_image = Encryption_Of_Image(Load_and_Save);
 
-        // To Create A new File Write that Specific String to that File and then Close that File
-          File.WriteAllText(Save_Location_textBox.Text, encrypt_image);
+            // To Create A new File Write that Specific String to that File and then Close that File
+            File.WriteAllText(Save_Location_textBox.Text, encrypt_image);
 
-          MessageBox.Show("Encryption Successfully Performed and File was Saved at Your Specified Location");
+            MessageBox.Show("Encryption Successfully Performed and File was Saved at Your Specified Location");
 
         }
 
@@ -227,21 +227,35 @@ namespace Cryptography
         // Function for Encrytion of Image
         public string Encryption_Of_Image(string Input_Image)
         {
-           String temp ="" ;
+            String temp = "";
+
            // Input Image Recieved Assigned to Converted_Image Object
             string Converted_Image_To_ByteArray = Input_Image;
 
             //String Converted To Char Array 
             char[] Array = Converted_Image_To_ByteArray.ToCharArray();
 
+            // to Show user how much encrytion has been done
+            ENCRYTION_progressBar.Maximum = Array.Length;
+
+
             for (int i = 1; i < Array.Length; i++ )
             {
-            
+
+              ENCRYTION_progressBar.Value = i;
+
+             //Generating Number Accoding to Algorithm 
               if (temp == "")
-                {
-                    temp = temp + Cryptography.RSA_Algorithm_Implementation.Modulus(Array[i], Value_of_E, N);
-                   
-                }
+              {
+                    temp = temp + Cryptography.RSA_Algorithm_Implementation.Generator(Array[i], Value_of_E, N);
+              }
+                
+
+              else
+              {
+                  temp = temp + "#"+ Cryptography.RSA_Algorithm_Implementation.Generator(Array[i], Value_of_E, N);
+              }
+
             }
 
                 return temp;
@@ -250,5 +264,6 @@ namespace Cryptography
     }
 
 
-}
+    }
+
 

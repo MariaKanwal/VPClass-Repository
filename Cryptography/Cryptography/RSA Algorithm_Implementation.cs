@@ -20,12 +20,19 @@ namespace Cryptography
 
        
         // Incomplete 
-        public static int Modulus(int array, int Value_E, int N)
-        { 
-            int temp = 1;
-            temp = temp* array % N;
-            temp = temp % N;
-            return temp;
+        public static double Generator(double array, double Value_E, double N)
+        {
+            double temp;
+            if( Value_E % 2 == 0)
+            {
+                temp = (Generator(array, Value_E,N));
+                return temp;
+            }
+            else
+            {
+                return (array % N);
+            }
         }
+
     }
 }
