@@ -32,7 +32,7 @@ namespace Cryptography
             InitializeComponent();
         }
 
-
+       
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
@@ -223,7 +223,7 @@ namespace Cryptography
 
 
 
-        // Incomplete
+        // Complete but file shows no value
         // Function for Encrytion of Image
         public string Encryption_Of_Image(string Input_Image)
         {
@@ -233,13 +233,13 @@ namespace Cryptography
             string Converted_Image_To_ByteArray = Input_Image;
 
             //String Converted To Char Array 
-            char[] Array = Converted_Image_To_ByteArray.ToCharArray();
+            char[] Arr = Converted_Image_To_ByteArray.ToCharArray();
 
             // to Show user how much encrytion has been done
-            ENCRYTION_progressBar.Maximum = Array.Length;
+            ENCRYTION_progressBar.Maximum = Arr.Length;
 
 
-            for (int i = 1; i < Array.Length; i++ )
+            for (int i = 1; i < Arr.Length; i++ )
             {
 
               ENCRYTION_progressBar.Value = i;
@@ -247,13 +247,13 @@ namespace Cryptography
           
               if (temp == "")
               {
-                    temp = temp + Cryptography.RSA_Algorithm_Implementation.Generator(Array[i], Value_of_E, N);
+                    temp = temp + Cryptography.RSA_Algorithm_Implementation.Generator(Arr[i], Value_of_E, N);
               }
                 
 
               else
               {
-                  temp = temp + "#"+ Cryptography.RSA_Algorithm_Implementation.Generator(Array[i], Value_of_E, N);
+                  temp = temp + "-"+ Cryptography.RSA_Algorithm_Implementation.Generator(Arr[i], Value_of_E, N);
               }
 
             }
