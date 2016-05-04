@@ -24,7 +24,7 @@ namespace Cryptography
         static string Load_and_Save = "";
 
 
-        int N;
+        int n;
 
 
         public Crytography_Form()
@@ -92,7 +92,7 @@ namespace Cryptography
 
                     //Assign Value For Value of Encryion Exponenet 
                     // Calculating Value of "n" to check co prime between n and E
-                    int VALUE_OF_PHI = Cryptography.RSA_Algorithm_Implementation.Value_of_N_Calculator((Prime_Number_1 - 1), (Prime_Number_2 - 1));
+                    int VALUE_OF_PHI = Cryptography.RSA_Algorithm_Implementation.Value_Of_N_Calculator((Prime_Number_1 - 1), (Prime_Number_2 - 1));
 
 
                     //If e was coprime of n
@@ -207,7 +207,7 @@ namespace Cryptography
         {
             //Calculating Value of N by calling Function From RSA_Algorithm Implementation Class on both Prime Numbers
 
-            N = Cryptography.RSA_Algorithm_Implementation.Value_of_N_Calculator(Prime_Number_1, Prime_Number_2);
+            n = Cryptography.RSA_Algorithm_Implementation.Value_Of_N_Calculator(Prime_Number_1, Prime_Number_2);
 
 
             //Encrytion of Image function called on Load and Save object that has image stored in form of bitmap 
@@ -223,7 +223,7 @@ namespace Cryptography
 
 
 
-        // Complete but file shows no value
+      
         // Function for Encrytion of Image
         public string Encryption_Of_Image(string Input_Image)
         {
@@ -241,19 +241,19 @@ namespace Cryptography
 
             for (int i = 1; i < Arr.Length; i++ )
             {
-
+                //Value Increased in Progress Bar
               ENCRYTION_progressBar.Value = i;
 
-          
+             // Main function to produce encrypted value bit by bit 
               if (temp == "")
               {
-                    temp = temp + Cryptography.RSA_Algorithm_Implementation.Generator(Arr[i], Value_of_E, N);
+                    temp = temp + Cryptography.RSA_Algorithm_Implementation.Generator(Arr[i], Value_of_E, n);
               }
                 
-
+              // just to seprate the numbers converted 
               else
               {
-                  temp = temp + "-"+ Cryptography.RSA_Algorithm_Implementation.Generator(Arr[i], Value_of_E, N);
+                  temp = temp + " # "+ Cryptography.RSA_Algorithm_Implementation.Generator(Arr[i], Value_of_E, n);
               }
 
             }
