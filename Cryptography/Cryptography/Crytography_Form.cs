@@ -32,7 +32,7 @@ namespace Cryptography
             InitializeComponent();
         }
 
-       
+
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
@@ -223,13 +223,14 @@ namespace Cryptography
 
 
 
-      
-        // Function for Encrytion of Image
+
+        // Function for Encrytion of Image 
+        // Calls the Generation function and gets the finle value to be depicted in file from it 
         public string Encryption_Of_Image(string Input_Image)
         {
             String temp = "";
 
-           // Input Image Recieved Assigned to Converted_Image Object
+            // Input Image Recieved Assigned to Converted_Image Object
             string Converted_Image_To_ByteArray = Input_Image;
 
             //String Converted To Char Array 
@@ -239,31 +240,27 @@ namespace Cryptography
             ENCRYTION_progressBar.Maximum = Arr.Length;
 
 
-            for (int i = 1; i < Arr.Length; i++ )
+            for (int i = 1; i < Arr.Length; i++)
             {
                 //Value Increased in Progress Bar
-              ENCRYTION_progressBar.Value = i;
+                ENCRYTION_progressBar.Value = i;
 
-             // Main function to produce encrypted value bit by bit 
-              if (temp == "")
-              {
+                // Main function to produce encrypted value bit by bit 
+                if (temp == "")
+                {
                     temp = temp + Cryptography.RSA_Algorithm_Implementation.Generator(Arr[i], Value_of_E, n);
-              }
-                
-              // just to seprate the numbers converted 
-              else
-              {
-                  temp = temp + " # "+ Cryptography.RSA_Algorithm_Implementation.Generator(Arr[i], Value_of_E, n);
-              }
+
+                }
+
+                // just to seprate the numbers converted 
+                else
+                {
+                    temp = temp + " # " + Cryptography.RSA_Algorithm_Implementation.Generator(Arr[i], Value_of_E, n);
+                }
 
             }
-
-                return temp;
+            return temp;
         }
 
     }
-
-
-    }
-
-
+}

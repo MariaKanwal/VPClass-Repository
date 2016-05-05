@@ -17,38 +17,47 @@ namespace Cryptography
         }
 
 
-
-
-
-
-            public static long Generator(long array, long Value_E, long N) 
+        //To generate a number that will generate the speicifc key for my image
+        // Uses value ruuning in array and Value of E assigned by User , calulated N by product of prime numbers
+        public static long Generator(long array, long Value_E, long N)
+        {
+            //If Value of E is 0
+            // Array ^ 0 = 1 
+            long temp;
+            if (Value_E == 0)
             {
-                //If Value of E is 0
-                // Array ^ 0 = 1
-                if (Value_E == 0)
-                {
-                    return 1;
-                }
-                    
+                return 1;
 
-                    //If Value of E is odd
-                // Array ^ 5 = a(a ^4)--
-                else if (Value_E % 2 == 0)
-                {
-                   return ((Generator(array, Value_E / 2, N))*(Generator(array, Value_E / 2, N))) % N;
-                }
-                    
-
-                    //If Value of E is Even
-                    //equally splits
-                else
-                {
-                   return ((array % N) * Generator(array, Value_E - 1, N)) % N;
-                }
-
-
-                   
             }
 
+                 //If Value of E is Even
+            //equally splits
+            else if (Value_E % 2 == 0)
+            {
+
+                temp = ((Generator(array, Value_E / 2, N)) * (Generator(array, Value_E / 2, N))) % N;
+                return temp;
+            }
+
+
+               //If Value of E is odd
+            // Array ^ 5 = a(a ^4)-- 
+            else
+            {
+                temp= ((array % N) * Generator(array, Value_E - 1, N)) % N;
+                return temp;
+
+            }
+
+
         }
+
+
+
+
+
+
+
     }
+
+}
