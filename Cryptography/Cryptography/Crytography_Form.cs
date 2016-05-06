@@ -21,7 +21,8 @@ namespace Cryptography
 
 
 
-        static string Load_and_Save = "";
+        static string Load_and_Save_Image= "";
+        static string Load_and_Save_TextFile = "";
 
 
         int n;
@@ -104,7 +105,7 @@ namespace Cryptography
                     else
                     {
                         textBox_Value_of_E.Text = "";
-                        MessageBox.Show("Please Enter a Realitive Prime Number");
+                        MessageBox.Show("Please Enter a Relative Prime Number");
                         return;
                     }
 
@@ -124,6 +125,10 @@ namespace Cryptography
 
         private void button9_Click(object sender, EventArgs e)
         {
+            // For Loading TextFile and Reading From Text File
+            Load_and_Save_TextFile = File.ReadAllText(TEXTFILE_textBox.Text);
+
+            MessageBox.Show("TextFile Selected was Saved For Decryption ");
 
         }
 
@@ -142,7 +147,7 @@ namespace Cryptography
 
             else
             {
-
+                Image_Source_textbox.Text = "";
             }
 
 
@@ -150,7 +155,7 @@ namespace Cryptography
 
         private void SaveImage_Bbutton2_Click(object sender, EventArgs e)
         {
-            Load_and_Save = BitConverter.ToString(Conversion.Conversion_To_BitMap(ImagePictureBox.Image));
+            Load_and_Save_Image = BitConverter.ToString(Conversion.Conversion_To_BitMap(ImagePictureBox.Image));
             //For Calling the image to bit map converter function from implementation class with help of BITCONVERTER library 
 
             MessageBox.Show("Image Selected was Saved For Encryption ");
@@ -212,7 +217,7 @@ namespace Cryptography
 
             //Encrytion of Image function called on Load and Save object that has image stored in form of bitmap 
             String encrypt_image;
-            encrypt_image = Encryption_Of_Image(Load_and_Save);
+            encrypt_image = Encryption_Of_Image(Load_and_Save_Image);
 
             // To Create A new File Write that Specific String to that File and then Close that File
             File.WriteAllText(Save_Location_textBox.Text, encrypt_image);
@@ -260,6 +265,28 @@ namespace Cryptography
 
             }
             return temp;
+        }
+
+        private void Select_File_button10_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OPEN_TEXT = new OpenFileDialog();
+            OPEN_TEXT.Filter = "Text |*.txt";                          //Only Accepts .txt Files
+
+            if (OPEN_TEXT.ShowDialog() == DialogResult.OK)
+            {
+                TEXTFILE_textBox.Text = OPEN_TEXT.FileName;      //ForTaking Input File From User
+            }
+
+            else
+            {
+                TEXTFILE_textBox.Text = "";
+            }
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

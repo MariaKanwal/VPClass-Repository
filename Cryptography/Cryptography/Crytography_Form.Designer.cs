@@ -42,9 +42,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.TEXTFILE_textBox = new System.Windows.Forms.TextBox();
+            this.Select_File_button = new System.Windows.Forms.Button();
+            this.SAVE_TEXTFILE_button = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -220,9 +220,9 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.textBox7);
-            this.groupBox6.Controls.Add(this.button10);
-            this.groupBox6.Controls.Add(this.button9);
+            this.groupBox6.Controls.Add(this.TEXTFILE_textBox);
+            this.groupBox6.Controls.Add(this.Select_File_button);
+            this.groupBox6.Controls.Add(this.SAVE_TEXTFILE_button);
             this.groupBox6.Location = new System.Drawing.Point(17, 20);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(522, 90);
@@ -231,34 +231,35 @@
             this.groupBox6.Text = "TextFile";
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
-            // textBox7
+            // TEXTFILE_textBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(21, 19);
-            this.textBox7.MaxLength = 8900000;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(396, 20);
-            this.textBox7.TabIndex = 0;
+            this.TEXTFILE_textBox.Location = new System.Drawing.Point(21, 19);
+            this.TEXTFILE_textBox.MaxLength = 8900000;
+            this.TEXTFILE_textBox.Name = "TEXTFILE_textBox";
+            this.TEXTFILE_textBox.Size = new System.Drawing.Size(396, 20);
+            this.TEXTFILE_textBox.TabIndex = 0;
             // 
-            // button10
+            // Select_File_button
             // 
-            this.button10.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(443, 19);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(56, 39);
-            this.button10.TabIndex = 8;
-            this.button10.Text = "...";
-            this.button10.UseVisualStyleBackColor = true;
+            this.Select_File_button.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Select_File_button.Location = new System.Drawing.Point(443, 19);
+            this.Select_File_button.Name = "Select_File_button";
+            this.Select_File_button.Size = new System.Drawing.Size(56, 39);
+            this.Select_File_button.TabIndex = 8;
+            this.Select_File_button.Text = "...";
+            this.Select_File_button.UseVisualStyleBackColor = true;
+            this.Select_File_button.Click += new System.EventHandler(this.Select_File_button10_Click);
             // 
-            // button9
+            // SAVE_TEXTFILE_button
             // 
-            this.button9.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(123, 51);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(262, 33);
-            this.button9.TabIndex = 6;
-            this.button9.Text = "Save Text File";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.SAVE_TEXTFILE_button.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SAVE_TEXTFILE_button.Location = new System.Drawing.Point(123, 51);
+            this.SAVE_TEXTFILE_button.Name = "SAVE_TEXTFILE_button";
+            this.SAVE_TEXTFILE_button.Size = new System.Drawing.Size(262, 33);
+            this.SAVE_TEXTFILE_button.TabIndex = 6;
+            this.SAVE_TEXTFILE_button.Text = "Save Text File";
+            this.SAVE_TEXTFILE_button.UseVisualStyleBackColor = true;
+            this.SAVE_TEXTFILE_button.Click += new System.EventHandler(this.button9_Click);
             // 
             // groupBox10
             // 
@@ -268,13 +269,13 @@
             this.groupBox10.Size = new System.Drawing.Size(308, 232);
             this.groupBox10.TabIndex = 9;
             this.groupBox10.TabStop = false;
-            this.groupBox10.Text = " ";
+            this.groupBox10.Text = " Output Image";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(6, 19);
+            this.pictureBox2.Location = new System.Drawing.Point(15, 19);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(296, 207);
+            this.pictureBox2.Size = new System.Drawing.Size(287, 207);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
@@ -293,6 +294,7 @@
             this.tabPage1.Size = new System.Drawing.Size(874, 408);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Encryption";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // groupBox5
             // 
@@ -488,17 +490,17 @@
             this.groupBox2.Controls.Add(this.ImagePictureBox);
             this.groupBox2.Location = new System.Drawing.Point(558, 20);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(308, 232);
+            this.groupBox2.Size = new System.Drawing.Size(308, 245);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = " ";
+            this.groupBox2.Text = " Input Image";
             // 
             // ImagePictureBox
             // 
             this.ImagePictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.ImagePictureBox.Location = new System.Drawing.Point(6, 11);
+            this.ImagePictureBox.Location = new System.Drawing.Point(15, 19);
             this.ImagePictureBox.Name = "ImagePictureBox";
-            this.ImagePictureBox.Size = new System.Drawing.Size(296, 207);
+            this.ImagePictureBox.Size = new System.Drawing.Size(276, 207);
             this.ImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ImagePictureBox.TabIndex = 2;
             this.ImagePictureBox.TabStop = false;
@@ -560,13 +562,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox ImagePictureBox;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button SAVE_TEXTFILE_button;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox TEXTFILE_textBox;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.ProgressBar ENCRYTION_progressBar;
@@ -576,7 +578,7 @@
         private System.Windows.Forms.TextBox Save_Location_textBox;
         private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button Select_File_button;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button SaveImage_Button2;
