@@ -14,18 +14,22 @@ namespace Cryptography
     public partial class Crytography_Form : Form
     {
 
-
+        // Values Used In Encryption 
         static int Prime_Number_1;
         static int Prime_Number_2;
         static int Value_of_E;
 
+        //Values Used In Decryption 
+        static int Value_of_D;
+        static int Value_of_N;
 
-
-        static string Load_and_Save_Image= "";
+        static string Load_and_Save_Image = "";
         static string Load_and_Save_TextFile = "";
 
 
         int n;
+
+
 
 
         public Crytography_Form()
@@ -41,7 +45,7 @@ namespace Cryptography
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (Assign_Values_Button3.Text == "Assign Values")
+            if (ENC_Assign_Values_Button3.Text == "Assign Values")
             {
                 // To take Input From User and Make sure that all of the textboxes had values
 
@@ -109,7 +113,7 @@ namespace Cryptography
                         return;
                     }
 
-                    //To show that All the Values are assgined for Encrytion 
+                    //To show that All the Values are assgined for Encryption 
                     MessageBox.Show("You Have Sucessfuly Assigned all values");
                 }
 
@@ -126,7 +130,8 @@ namespace Cryptography
         private void button9_Click(object sender, EventArgs e)
         {
             // For Loading TextFile and Reading From Text File
-            Load_and_Save_TextFile = File.ReadAllText(TEXTFILE_textBox.Text);
+            Load_and_Save_TextFile = File.ReadAllText(Textfile_textBox.Text);
+
 
             MessageBox.Show("TextFile Selected was Saved For Decryption ");
 
@@ -274,12 +279,12 @@ namespace Cryptography
 
             if (OPEN_TEXT.ShowDialog() == DialogResult.OK)
             {
-                TEXTFILE_textBox.Text = OPEN_TEXT.FileName;      //ForTaking Input File From User
+                Textfile_textBox.Text = OPEN_TEXT.FileName;      //ForTaking Input File From User
             }
 
             else
             {
-                TEXTFILE_textBox.Text = "";
+                Textfile_textBox.Text = "";
             }
 
         }
@@ -289,5 +294,70 @@ namespace Cryptography
 
         }
 
+        private void DEC_AssignValues_button8_Click(object sender, EventArgs e)
+        {
+
+            if (DEC_AssignValues_button8.Text == "Assign Values")
+            {
+
+                // To take Input From User and Make sure that all of the textboxes had values
+
+                if (textBox_Value_of_D.Text == "" || textBox_Value_Of_N.Text == "")
+                {
+                    MessageBox.Show("Please Fill All The Assocaited Feilds");
+                }
+
+
+                else
+                {
+                    // Assigning value Of D
+
+
+                    //If number entered is greater than 0  it is assigned 
+                    if (int.Parse(textBox_Value_of_D.Text) > 0)
+                    {
+                        Value_of_D = int.Parse(textBox_Value_of_D.Text);
+                    }
+
+
+                   // Else user is informed 
+                    else
+                    {
+                        textBox_Value_of_D.Text = "";
+                        MessageBox.Show("You didn't Enter A Number Greater Than Zero  , Please TRY AGAIN");
+                        return;
+                    }
+
+                    // Assigning value Of N
+
+                    //If number entered is greater than 0  it is assigned 
+                    if (int.Parse(textBox_Value_Of_N.Text) > 0)
+                    {
+                        Value_of_N = int.Parse(textBox_Value_Of_N.Text);
+                    }
+
+
+                    // Else user is informed
+                    else
+                    {
+                        textBox_Value_Of_N.Text = "";
+                        MessageBox.Show("You didn't Enter A Number Greater Than Zero  , Please TRY AGAIN");
+                        return;
+                    }
+
+
+                    //To show that All the Values are assgined for Decryption 
+                    MessageBox.Show("You Have Sucessfuly Assigned all values");
+                }
+
+            }
+
+            else
+            {
+                textBox_Value_of_D.Text = "";
+                textBox_Value_Of_N.Text = "";
+            }
+
+        }
     }
 }

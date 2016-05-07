@@ -37,14 +37,14 @@
             this.button7 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox_Value_of_D = new System.Windows.Forms.TextBox();
+            this.textBox_Value_Of_N = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
+            this.DEC_AssignValues_button8 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.TEXTFILE_textBox = new System.Windows.Forms.TextBox();
+            this.Textfile_textBox = new System.Windows.Forms.TextBox();
             this.Select_File_button = new System.Windows.Forms.Button();
-            this.SAVE_TEXTFILE_button = new System.Windows.Forms.Button();
+            this.Save_Textfile_button = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -60,7 +60,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_PrimeNo_2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Assign_Values_Button3 = new System.Windows.Forms.Button();
+            this.ENC_Assign_Values_Button3 = new System.Windows.Forms.Button();
             this.textBox_Value_of_E = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Image_Source_textbox = new System.Windows.Forms.TextBox();
@@ -163,10 +163,10 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.label6);
-            this.groupBox7.Controls.Add(this.textBox9);
-            this.groupBox7.Controls.Add(this.textBox8);
+            this.groupBox7.Controls.Add(this.textBox_Value_of_D);
+            this.groupBox7.Controls.Add(this.textBox_Value_Of_N);
             this.groupBox7.Controls.Add(this.label4);
-            this.groupBox7.Controls.Add(this.button8);
+            this.groupBox7.Controls.Add(this.DEC_AssignValues_button8);
             this.groupBox7.Location = new System.Drawing.Point(17, 116);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(522, 165);
@@ -184,19 +184,19 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Value of \"D\"";
             // 
-            // textBox9
+            // textBox_Value_of_D
             // 
-            this.textBox9.Location = new System.Drawing.Point(279, 30);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(220, 20);
-            this.textBox9.TabIndex = 4;
+            this.textBox_Value_of_D.Location = new System.Drawing.Point(279, 30);
+            this.textBox_Value_of_D.Name = "textBox_Value_of_D";
+            this.textBox_Value_of_D.Size = new System.Drawing.Size(220, 20);
+            this.textBox_Value_of_D.TabIndex = 4;
             // 
-            // textBox8
+            // textBox_Value_Of_N
             // 
-            this.textBox8.Location = new System.Drawing.Point(279, 74);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(220, 20);
-            this.textBox8.TabIndex = 5;
+            this.textBox_Value_Of_N.Location = new System.Drawing.Point(279, 74);
+            this.textBox_Value_Of_N.Name = "textBox_Value_Of_N";
+            this.textBox_Value_Of_N.Size = new System.Drawing.Size(220, 20);
+            this.textBox_Value_Of_N.TabIndex = 5;
             // 
             // label4
             // 
@@ -208,21 +208,22 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Value of \"N\" (N = Prime 1 * Prime 2)";
             // 
-            // button8
+            // DEC_AssignValues_button8
             // 
-            this.button8.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(123, 111);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(262, 34);
-            this.button8.TabIndex = 1;
-            this.button8.Text = "Assign Values";
-            this.button8.UseVisualStyleBackColor = true;
+            this.DEC_AssignValues_button8.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DEC_AssignValues_button8.Location = new System.Drawing.Point(123, 111);
+            this.DEC_AssignValues_button8.Name = "DEC_AssignValues_button8";
+            this.DEC_AssignValues_button8.Size = new System.Drawing.Size(262, 34);
+            this.DEC_AssignValues_button8.TabIndex = 1;
+            this.DEC_AssignValues_button8.Text = "Assign Values";
+            this.DEC_AssignValues_button8.UseVisualStyleBackColor = true;
+            this.DEC_AssignValues_button8.Click += new System.EventHandler(this.DEC_AssignValues_button8_Click);
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.TEXTFILE_textBox);
+            this.groupBox6.Controls.Add(this.Textfile_textBox);
             this.groupBox6.Controls.Add(this.Select_File_button);
-            this.groupBox6.Controls.Add(this.SAVE_TEXTFILE_button);
+            this.groupBox6.Controls.Add(this.Save_Textfile_button);
             this.groupBox6.Location = new System.Drawing.Point(17, 20);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(522, 90);
@@ -231,13 +232,13 @@
             this.groupBox6.Text = "TextFile";
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
-            // TEXTFILE_textBox
+            // Textfile_textBox
             // 
-            this.TEXTFILE_textBox.Location = new System.Drawing.Point(21, 19);
-            this.TEXTFILE_textBox.MaxLength = 8900000;
-            this.TEXTFILE_textBox.Name = "TEXTFILE_textBox";
-            this.TEXTFILE_textBox.Size = new System.Drawing.Size(396, 20);
-            this.TEXTFILE_textBox.TabIndex = 0;
+            this.Textfile_textBox.Location = new System.Drawing.Point(21, 19);
+            this.Textfile_textBox.MaxLength = 8900000;
+            this.Textfile_textBox.Name = "Textfile_textBox";
+            this.Textfile_textBox.Size = new System.Drawing.Size(396, 20);
+            this.Textfile_textBox.TabIndex = 0;
             // 
             // Select_File_button
             // 
@@ -250,16 +251,16 @@
             this.Select_File_button.UseVisualStyleBackColor = true;
             this.Select_File_button.Click += new System.EventHandler(this.Select_File_button10_Click);
             // 
-            // SAVE_TEXTFILE_button
+            // Save_Textfile_button
             // 
-            this.SAVE_TEXTFILE_button.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SAVE_TEXTFILE_button.Location = new System.Drawing.Point(123, 51);
-            this.SAVE_TEXTFILE_button.Name = "SAVE_TEXTFILE_button";
-            this.SAVE_TEXTFILE_button.Size = new System.Drawing.Size(262, 33);
-            this.SAVE_TEXTFILE_button.TabIndex = 6;
-            this.SAVE_TEXTFILE_button.Text = "Save Text File";
-            this.SAVE_TEXTFILE_button.UseVisualStyleBackColor = true;
-            this.SAVE_TEXTFILE_button.Click += new System.EventHandler(this.button9_Click);
+            this.Save_Textfile_button.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Save_Textfile_button.Location = new System.Drawing.Point(123, 51);
+            this.Save_Textfile_button.Name = "Save_Textfile_button";
+            this.Save_Textfile_button.Size = new System.Drawing.Size(262, 33);
+            this.Save_Textfile_button.TabIndex = 6;
+            this.Save_Textfile_button.Text = "Save Text File";
+            this.Save_Textfile_button.UseVisualStyleBackColor = true;
+            this.Save_Textfile_button.Click += new System.EventHandler(this.button9_Click);
             // 
             // groupBox10
             // 
@@ -362,7 +363,7 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.textBox_PrimeNo_2);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.Assign_Values_Button3);
+            this.groupBox3.Controls.Add(this.ENC_Assign_Values_Button3);
             this.groupBox3.Controls.Add(this.textBox_Value_of_E);
             this.groupBox3.Location = new System.Drawing.Point(18, 126);
             this.groupBox3.Name = "groupBox3";
@@ -416,16 +417,16 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Value of \"E\" (Encrytion Exponent)";
             // 
-            // Assign_Values_Button3
+            // ENC_Assign_Values_Button3
             // 
-            this.Assign_Values_Button3.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Assign_Values_Button3.Location = new System.Drawing.Point(111, 127);
-            this.Assign_Values_Button3.Name = "Assign_Values_Button3";
-            this.Assign_Values_Button3.Size = new System.Drawing.Size(262, 33);
-            this.Assign_Values_Button3.TabIndex = 6;
-            this.Assign_Values_Button3.Text = "Assign Values";
-            this.Assign_Values_Button3.UseVisualStyleBackColor = true;
-            this.Assign_Values_Button3.Click += new System.EventHandler(this.button3_Click);
+            this.ENC_Assign_Values_Button3.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ENC_Assign_Values_Button3.Location = new System.Drawing.Point(111, 127);
+            this.ENC_Assign_Values_Button3.Name = "ENC_Assign_Values_Button3";
+            this.ENC_Assign_Values_Button3.Size = new System.Drawing.Size(262, 33);
+            this.ENC_Assign_Values_Button3.TabIndex = 6;
+            this.ENC_Assign_Values_Button3.Text = "Assign Values";
+            this.ENC_Assign_Values_Button3.UseVisualStyleBackColor = true;
+            this.ENC_Assign_Values_Button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox_Value_of_E
             // 
@@ -553,7 +554,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl Cryptography_BY_RSA;
-        private System.Windows.Forms.Button Assign_Values_Button3;
+        private System.Windows.Forms.Button ENC_Assign_Values_Button3;
         private System.Windows.Forms.TextBox textBox_Value_of_E;
         private System.Windows.Forms.TextBox textBox_PrimeNo_2;
         private System.Windows.Forms.TextBox textBox_PrimeNO_1;
@@ -562,13 +563,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox ImagePictureBox;
-        private System.Windows.Forms.Button SAVE_TEXTFILE_button;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Button Save_Textfile_button;
+        private System.Windows.Forms.Button DEC_AssignValues_button8;
+        private System.Windows.Forms.TextBox textBox_Value_Of_N;
+        private System.Windows.Forms.TextBox textBox_Value_of_D;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox TEXTFILE_textBox;
+        private System.Windows.Forms.TextBox Textfile_textBox;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.ProgressBar ENCRYTION_progressBar;
