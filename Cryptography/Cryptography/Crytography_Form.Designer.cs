@@ -30,11 +30,11 @@
         {
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.Decrypt_textfile_button6 = new System.Windows.Forms.Button();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.Save_TextBox_Locaion_textBox = new System.Windows.Forms.TextBox();
+            this.Store_TextFile_Location_button = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_Value_of_D = new System.Windows.Forms.TextBox();
@@ -52,8 +52,8 @@
             this.Encrypt_Image_button5 = new System.Windows.Forms.Button();
             this.ENCRYTION_progressBar = new System.Windows.Forms.ProgressBar();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.Store_Location_button4 = new System.Windows.Forms.Button();
-            this.Save_Location_textBox = new System.Windows.Forms.TextBox();
+            this.Store_Image_Location_button4 = new System.Windows.Forms.Button();
+            this.Save_Image_Location_textBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_PrimeNO_1 = new System.Windows.Forms.TextBox();
@@ -105,7 +105,7 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.button6);
+            this.groupBox9.Controls.Add(this.Decrypt_textfile_button6);
             this.groupBox9.Controls.Add(this.progressBar2);
             this.groupBox9.Location = new System.Drawing.Point(566, 259);
             this.groupBox9.Name = "groupBox9";
@@ -114,16 +114,16 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Decrytion Of TextFile";
             // 
-            // button6
+            // Decrypt_textfile_button6
             // 
-            this.button6.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(67, 28);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(150, 38);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Decrypt Text File";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.Decrypt_textfile_button6.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Decrypt_textfile_button6.Location = new System.Drawing.Point(67, 28);
+            this.Decrypt_textfile_button6.Name = "Decrypt_textfile_button6";
+            this.Decrypt_textfile_button6.Size = new System.Drawing.Size(150, 38);
+            this.Decrypt_textfile_button6.TabIndex = 2;
+            this.Decrypt_textfile_button6.Text = "Decrypt Text File";
+            this.Decrypt_textfile_button6.UseVisualStyleBackColor = true;
+            this.Decrypt_textfile_button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // progressBar2
             // 
@@ -134,8 +134,8 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.textBox6);
-            this.groupBox8.Controls.Add(this.button7);
+            this.groupBox8.Controls.Add(this.Save_TextBox_Locaion_textBox);
+            this.groupBox8.Controls.Add(this.Store_TextFile_Location_button);
             this.groupBox8.Location = new System.Drawing.Point(17, 288);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(522, 100);
@@ -143,22 +143,23 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Saving Location";
             // 
-            // textBox6
+            // Save_TextBox_Locaion_textBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(6, 43);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(396, 20);
-            this.textBox6.TabIndex = 0;
+            this.Save_TextBox_Locaion_textBox.Location = new System.Drawing.Point(6, 43);
+            this.Save_TextBox_Locaion_textBox.Name = "Save_TextBox_Locaion_textBox";
+            this.Save_TextBox_Locaion_textBox.Size = new System.Drawing.Size(396, 20);
+            this.Save_TextBox_Locaion_textBox.TabIndex = 0;
             // 
-            // button7
+            // Store_TextFile_Location_button
             // 
-            this.button7.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(443, 31);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(56, 40);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "...";
-            this.button7.UseVisualStyleBackColor = true;
+            this.Store_TextFile_Location_button.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Store_TextFile_Location_button.Location = new System.Drawing.Point(443, 31);
+            this.Store_TextFile_Location_button.Name = "Store_TextFile_Location_button";
+            this.Store_TextFile_Location_button.Size = new System.Drawing.Size(56, 40);
+            this.Store_TextFile_Location_button.TabIndex = 2;
+            this.Store_TextFile_Location_button.Text = "...";
+            this.Store_TextFile_Location_button.UseVisualStyleBackColor = true;
+            this.Store_TextFile_Location_button.Click += new System.EventHandler(this.Store_TextFile_Location_button7_Click);
             // 
             // groupBox7
             // 
@@ -328,8 +329,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.Store_Location_button4);
-            this.groupBox4.Controls.Add(this.Save_Location_textBox);
+            this.groupBox4.Controls.Add(this.Store_Image_Location_button4);
+            this.groupBox4.Controls.Add(this.Save_Image_Location_textBox);
             this.groupBox4.Location = new System.Drawing.Point(24, 305);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(508, 83);
@@ -337,24 +338,24 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Saving Location";
             // 
-            // Store_Location_button4
+            // Store_Image_Location_button4
             // 
-            this.Store_Location_button4.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Store_Location_button4.Location = new System.Drawing.Point(422, 33);
-            this.Store_Location_button4.Name = "Store_Location_button4";
-            this.Store_Location_button4.Size = new System.Drawing.Size(56, 34);
-            this.Store_Location_button4.TabIndex = 1;
-            this.Store_Location_button4.Text = "...";
-            this.Store_Location_button4.UseVisualStyleBackColor = true;
-            this.Store_Location_button4.Click += new System.EventHandler(this.Store_Location_button4_Click);
+            this.Store_Image_Location_button4.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Store_Image_Location_button4.Location = new System.Drawing.Point(422, 33);
+            this.Store_Image_Location_button4.Name = "Store_Image_Location_button4";
+            this.Store_Image_Location_button4.Size = new System.Drawing.Size(56, 34);
+            this.Store_Image_Location_button4.TabIndex = 1;
+            this.Store_Image_Location_button4.Text = "...";
+            this.Store_Image_Location_button4.UseVisualStyleBackColor = true;
+            this.Store_Image_Location_button4.Click += new System.EventHandler(this.Store_Location_button4_Click);
             // 
-            // Save_Location_textBox
+            // Save_Image_Location_textBox
             // 
-            this.Save_Location_textBox.Location = new System.Drawing.Point(6, 42);
-            this.Save_Location_textBox.Name = "Save_Location_textBox";
-            this.Save_Location_textBox.Size = new System.Drawing.Size(396, 20);
-            this.Save_Location_textBox.TabIndex = 0;
-            this.Save_Location_textBox.TextChanged += new System.EventHandler(this.Save_Location_textBox_TextChanged);
+            this.Save_Image_Location_textBox.Location = new System.Drawing.Point(6, 42);
+            this.Save_Image_Location_textBox.Name = "Save_Image_Location_textBox";
+            this.Save_Image_Location_textBox.Size = new System.Drawing.Size(396, 20);
+            this.Save_Image_Location_textBox.TabIndex = 0;
+            this.Save_Image_Location_textBox.TextChanged += new System.EventHandler(this.Save_Location_textBox_TextChanged);
             // 
             // groupBox3
             // 
@@ -570,15 +571,15 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox Textfile_textBox;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button Store_TextFile_Location_button;
+        private System.Windows.Forms.TextBox Save_TextBox_Locaion_textBox;
         private System.Windows.Forms.ProgressBar ENCRYTION_progressBar;
         private System.Windows.Forms.Button Encrypt_Image_button5;
         private System.Windows.Forms.GroupBox Encrytion;
-        private System.Windows.Forms.Button Store_Location_button4;
-        private System.Windows.Forms.TextBox Save_Location_textBox;
+        private System.Windows.Forms.Button Store_Image_Location_button4;
+        private System.Windows.Forms.TextBox Save_Image_Location_textBox;
         private System.Windows.Forms.ProgressBar progressBar2;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button Decrypt_textfile_button6;
         private System.Windows.Forms.Button Select_File_button;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.PictureBox pictureBox2;

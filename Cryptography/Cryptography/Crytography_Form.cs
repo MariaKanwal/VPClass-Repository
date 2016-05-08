@@ -171,22 +171,22 @@ namespace Cryptography
 
         private void Store_Location_button4_Click(object sender, EventArgs e)
         {
-            //To Display a Save Dialouge so User Can Save Image 
-            SaveFileDialog Save_Location_Object = new SaveFileDialog();
+            //To Display a Save Dialouge so User Can Save Encrypted Image in form Of TextFile
+            SaveFileDialog Object_For_TextFile= new SaveFileDialog();
 
             //File Type allocated here
-            Save_Location_Object.Filter = "Text|*.txt";
+            Object_For_TextFile.Filter = "Text|*.txt";
 
             //Assign a Location for Document to be Saved 
-            if (Save_Location_Object.ShowDialog() == DialogResult.OK)
+            if (Object_For_TextFile.ShowDialog() == DialogResult.OK)
             {
-                Save_Location_textBox.Text = Save_Location_Object.FileName;
+                Save_Image_Location_textBox.Text = Object_For_TextFile.FileName;
             }
 
             // Else show the TextBox as Empty
             else
             {
-                Save_Location_textBox.Text = "";
+                Save_Image_Location_textBox.Text = "";
             }
 
 
@@ -225,7 +225,7 @@ namespace Cryptography
             encrypt_image = Encryption_Of_Image(Load_and_Save_Image);
 
             // To Create A new File Write that Specific String to that File and then Close that File
-            File.WriteAllText(Save_Location_textBox.Text, encrypt_image);
+            File.WriteAllText(Save_Image_Location_textBox.Text, encrypt_image);
 
             MessageBox.Show("Encryption Successfully Performed and File was Saved at Your Specified Location");
 
@@ -358,6 +358,27 @@ namespace Cryptography
                 textBox_Value_Of_N.Text = "";
             }
 
+        }
+
+        private void Store_TextFile_Location_button7_Click(object sender, EventArgs e)
+        {
+            //To Display a Save Dialouge so User Can Save Decrypted TextFile in form Of Image
+            SaveFileDialog Object_For_Image = new SaveFileDialog();
+
+            //Image Type allocated here
+            Object_For_Image.Filter = "JPG |*.JPG";
+
+            //Assign a Location for Image to be Saved 
+            if(Object_For_Image.ShowDialog() == DialogResult.OK)
+            {
+                Save_TextBox_Locaion_textBox.Text = Object_For_Image.FileName;
+            }
+
+            // Else show the TextBox as Empty
+            else
+            {
+                Save_TextBox_Locaion_textBox.Text = "";
+            }
         }
     }
 }
