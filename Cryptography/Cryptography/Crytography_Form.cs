@@ -199,8 +199,22 @@ namespace Cryptography
 
         private void button6_Click(object sender, EventArgs e)
         {
+            //Deccrytion of TextFile function called on Load and Save object that has textfile 
 
+            String decrypt_textfile;
+            decrypt_textfile = Decryption_Of_TextFile(Load_and_Save_TextFile);
         }
+
+
+        //Incomplete Decryption Function 
+        public string Decryption_Of_TextFile( String input)
+        {
+           char[]  arr= input.ToCharArray();
+           string a = "";
+           return a;
+        }
+
+
 
         private void textBox_PrimeNo_2_TextChanged(object sender, EventArgs e)
         {
