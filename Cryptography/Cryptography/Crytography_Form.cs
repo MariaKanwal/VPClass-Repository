@@ -206,12 +206,38 @@ namespace Cryptography
         }
 
 
+
+        // Function for Decrytion Of TextFile
+
         //Incomplete Decryption Function 
         public string Decryption_Of_TextFile( String input)
         {
-           char[]  arr= input.ToCharArray();
-           string a = "";
-           return a;
+            // Value for secound array to be used globally 
+            int nested;
+
+            string temp = "";
+
+          // Input TextFile Recieved Assigned and Converted To Char Array 
+           char[]  Arr= input.ToCharArray();
+          
+
+            // To Decrypt Values Conveted in Char One By One in 
+            for (int i = 0 ; i < Arr.Length ; i++)
+            {
+                 temp = "";
+
+                // If their is an actual Value and not # that was used as a seprator this is implemented 
+                for(nested = i ; Arr[nested] != '#'; nested++)
+                {
+                    temp = temp + Arr[nested];
+                }
+
+                i = nested;
+
+
+            }
+
+            return temp; 
         }
 
 
@@ -264,7 +290,7 @@ namespace Cryptography
             ENCRYTION_progressBar.Maximum = Arr.Length;
 
 
-            for (int i = 1; i < Arr.Length; i++)
+            for (int i = 0; i < Arr.Length; i++)
             {
                 //Value Increased in Progress Bar
                 ENCRYTION_progressBar.Value = i;
