@@ -31,7 +31,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.Decrypt_textfile_button6 = new System.Windows.Forms.Button();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.DECRYTION_progressBar = new System.Windows.Forms.ProgressBar();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.Save_TextBox_Locaion_textBox = new System.Windows.Forms.TextBox();
             this.Store_TextFile_Location_button = new System.Windows.Forms.Button();
@@ -106,7 +106,7 @@
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.Decrypt_textfile_button6);
-            this.groupBox9.Controls.Add(this.progressBar2);
+            this.groupBox9.Controls.Add(this.DECRYTION_progressBar);
             this.groupBox9.Location = new System.Drawing.Point(566, 259);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(296, 129);
@@ -125,12 +125,13 @@
             this.Decrypt_textfile_button6.UseVisualStyleBackColor = true;
             this.Decrypt_textfile_button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // progressBar2
+            // DECRYTION_progressBar
             // 
-            this.progressBar2.Location = new System.Drawing.Point(26, 72);
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(245, 40);
-            this.progressBar2.TabIndex = 3;
+            this.DECRYTION_progressBar.Location = new System.Drawing.Point(26, 72);
+            this.DECRYTION_progressBar.Name = "DECRYTION_progressBar";
+            this.DECRYTION_progressBar.Size = new System.Drawing.Size(245, 40);
+            this.DECRYTION_progressBar.TabIndex = 3;
+            this.DECRYTION_progressBar.Click += new System.EventHandler(this.progressBar2_Click);
             // 
             // groupBox8
             // 
@@ -578,7 +579,7 @@
         private System.Windows.Forms.GroupBox Encrytion;
         private System.Windows.Forms.Button Store_Image_Location_button4;
         private System.Windows.Forms.TextBox Save_Image_Location_textBox;
-        private System.Windows.Forms.ProgressBar progressBar2;
+        private System.Windows.Forms.ProgressBar DECRYTION_progressBar;
         private System.Windows.Forms.Button Decrypt_textfile_button6;
         private System.Windows.Forms.Button Select_File_button;
         private System.Windows.Forms.GroupBox groupBox10;

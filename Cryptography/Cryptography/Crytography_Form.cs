@@ -207,23 +207,36 @@ namespace Cryptography
 
 
 
-        // Function for Decrytion Of TextFile
+        //Decryption Function has some error
 
-        //Incomplete Decryption Function 
+
+        // Function for Decrytion Of TextFile
         public string Decryption_Of_TextFile( String input)
         {
             // Value for secound array to be used globally 
             int nested;
 
+            int Holder;
+
             string temp = "";
+
+            string Funtion_Call_Value = "" ;
+
 
           // Input TextFile Recieved Assigned and Converted To Char Array 
            char[]  Arr= input.ToCharArray();
-          
+
+           // to Show user how much decryption  has been done
+           DECRYTION_progressBar.Maximum = Arr.Length;
 
             // To Decrypt Values Conveted in Char One By One in 
             for (int i = 0 ; i < Arr.Length ; i++)
             {
+
+                //Value Increased in Progress Bar
+                DECRYTION_progressBar.Value = i;
+
+
                  temp = "";
 
                 // If their is an actual Value and not # that was used as a seprator this is implemented 
@@ -234,10 +247,16 @@ namespace Cryptography
 
                 i = nested;
 
+                // Converting String Value Calculated in Integer to Apply Formula 
+                Holder = int.Parse(temp);
+
+
+                // Main function to produce Decrypted value 
+                Funtion_Call_Value = Funtion_Call_Value + (Cryptography.RSA_Algorithm_Implementation.Generator(Holder, Value_of_D, Value_of_N));
 
             }
 
-            return temp; 
+            return Funtion_Call_Value;
         }
 
 
@@ -419,6 +438,11 @@ namespace Cryptography
             {
                 Save_TextBox_Locaion_textBox.Text = "";
             }
+        }
+
+        private void progressBar2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
