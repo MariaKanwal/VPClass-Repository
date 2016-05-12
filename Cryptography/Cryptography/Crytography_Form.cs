@@ -146,7 +146,7 @@ namespace Cryptography
             if (OPENIMAGE.ShowDialog() == DialogResult.OK)
             {
                 Image_Source_textbox.Text = OPENIMAGE.FileName; // For Taking Image from User
-                ImagePictureBox.Image = Image.FromFile(Image_Source_textbox.Text); //shows image in the Picture Box
+                encrytion_PictureBox.Image = Image.FromFile(Image_Source_textbox.Text); //shows image in the Picture Box
 
             }
 
@@ -160,8 +160,8 @@ namespace Cryptography
 
         private void SaveImage_Bbutton2_Click(object sender, EventArgs e)
         {
-            Load_and_Save_Image = BitConverter.ToString(Conversion.Conversion_To_BitMap(ImagePictureBox.Image));
-            //For Calling the image to bit map converter function from implementation class with help of BITCONVERTER library 
+            Load_and_Save_Image = BitConverter.ToString(Conversion.Conversion_To_BYTE_ARRAY(encrytion_PictureBox.Image));
+            //For Calling the bitmap image to byte converter function from implementation class with help of BITCONVERTER library 
 
             MessageBox.Show("Image Selected was Saved For Encryption ");
 
@@ -197,12 +197,20 @@ namespace Cryptography
 
         }
 
+
+        //Incomplete
         private void button6_Click(object sender, EventArgs e)
         {
             //Deccrytion of TextFile function called on Load and Save object that has textfile 
 
             String decrypt_textfile;
+
+            // Decrytion Function called to decrypt the Text Document 
             decrypt_textfile = Decryption_Of_TextFile(Load_and_Save_TextFile);
+
+
+            // Converting Image Back to Bitmap from Byte 
+            //decryption_pictureBox.Image = Cryptography.Conversion.Conversion_To_BITMAP_IMAGE(decrypt_textfile);
         }
 
 

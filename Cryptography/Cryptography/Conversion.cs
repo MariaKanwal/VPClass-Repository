@@ -11,7 +11,8 @@ namespace Cryptography
     class Conversion
     {
 
-        public static byte[] Conversion_To_BitMap(Image i)
+        // Function To Convert From BitMap Image To Byte
+        public static byte[] Conversion_To_BYTE_ARRAY(Image i)
         {
 
             //helps you read image in form of bytes
@@ -33,6 +34,26 @@ namespace Cryptography
             //returning the converted image to load image button after conversion
             return (byte_object);
         }
+
+
+        //Function To Convert From Byte Array To BitMap
+
+        public static Bitmap Conversion_To_BITMAP_IMAGE (byte[] b)
+        {
+
+                MemoryStream memory_stream_object = new MemoryStream(b);
+
+            //helps you read image in form of Bitmaps 
+            // From Stream helps Creates an Image from the specified data stream.
+                Bitmap Bitamp_Object = new Bitmap(Image.FromStream(memory_stream_object));
+
+
+           //returning the converted image 
+                return Bitamp_Object;
+        }
+
+
+
 
     }
 }

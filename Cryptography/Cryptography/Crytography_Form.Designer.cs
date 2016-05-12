@@ -46,7 +46,7 @@
             this.Select_File_button = new System.Windows.Forms.Button();
             this.Save_Textfile_button = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.decryption_pictureBox = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.Encrypt_Image_button5 = new System.Windows.Forms.Button();
@@ -68,7 +68,7 @@
             this.SaveImage_Button2 = new System.Windows.Forms.Button();
             this.Encrytion = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ImagePictureBox = new System.Windows.Forms.PictureBox();
+            this.encrytion_PictureBox = new System.Windows.Forms.PictureBox();
             this.Cryptography_BY_RSA = new System.Windows.Forms.TabControl();
             this.tabPage2.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -76,14 +76,14 @@
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.decryption_pictureBox)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ImagePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.encrytion_PictureBox)).BeginInit();
             this.Cryptography_BY_RSA.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -266,7 +266,7 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.pictureBox2);
+            this.groupBox10.Controls.Add(this.decryption_pictureBox);
             this.groupBox10.Location = new System.Drawing.Point(560, 20);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(308, 232);
@@ -274,13 +274,13 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = " Output Image";
             // 
-            // pictureBox2
+            // decryption_pictureBox
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(15, 19);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(287, 207);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.decryption_pictureBox.Location = new System.Drawing.Point(15, 19);
+            this.decryption_pictureBox.Name = "decryption_pictureBox";
+            this.decryption_pictureBox.Size = new System.Drawing.Size(287, 207);
+            this.decryption_pictureBox.TabIndex = 2;
+            this.decryption_pictureBox.TabStop = false;
             // 
             // tabPage1
             // 
@@ -490,7 +490,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.ImagePictureBox);
+            this.groupBox2.Controls.Add(this.encrytion_PictureBox);
             this.groupBox2.Location = new System.Drawing.Point(558, 20);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(308, 245);
@@ -498,15 +498,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = " Input Image";
             // 
-            // ImagePictureBox
+            // encrytion_PictureBox
             // 
-            this.ImagePictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.ImagePictureBox.Location = new System.Drawing.Point(15, 19);
-            this.ImagePictureBox.Name = "ImagePictureBox";
-            this.ImagePictureBox.Size = new System.Drawing.Size(276, 207);
-            this.ImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ImagePictureBox.TabIndex = 2;
-            this.ImagePictureBox.TabStop = false;
+            this.encrytion_PictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.encrytion_PictureBox.Location = new System.Drawing.Point(15, 19);
+            this.encrytion_PictureBox.Name = "encrytion_PictureBox";
+            this.encrytion_PictureBox.Size = new System.Drawing.Size(276, 207);
+            this.encrytion_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.encrytion_PictureBox.TabIndex = 2;
+            this.encrytion_PictureBox.TabStop = false;
             // 
             // Cryptography_BY_RSA
             // 
@@ -535,7 +535,7 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.decryption_pictureBox)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -545,7 +545,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ImagePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.encrytion_PictureBox)).EndInit();
             this.Cryptography_BY_RSA.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -564,7 +564,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.PictureBox ImagePictureBox;
+        private System.Windows.Forms.PictureBox encrytion_PictureBox;
         private System.Windows.Forms.Button Save_Textfile_button;
         private System.Windows.Forms.Button DEC_AssignValues_button8;
         private System.Windows.Forms.TextBox textBox_Value_Of_N;
@@ -583,7 +583,7 @@
         private System.Windows.Forms.Button Decrypt_textfile_button6;
         private System.Windows.Forms.Button Select_File_button;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox decryption_pictureBox;
         private System.Windows.Forms.Button SaveImage_Button2;
         private System.Windows.Forms.Button Select_button1;
         private System.Windows.Forms.TextBox Image_Source_textbox;
