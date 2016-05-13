@@ -52,6 +52,7 @@
       <DependentUpon>Crytography_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Conversion.cs" />
+    <Compile Include="Handler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RSA Algorithm_Implementation.cs" />

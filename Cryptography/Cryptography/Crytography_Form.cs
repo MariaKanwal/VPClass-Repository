@@ -210,7 +210,7 @@ namespace Cryptography
 
 
             // Converting Image Back to Bitmap from Byte 
-            //decryption_pictureBox.Image = Cryptography.Conversion.Conversion_To_BITMAP_IMAGE(decrypt_textfile);
+           // decryption_pictureBox.Image = Cryptography.Conversion.Conversion_To_BITMAP_IMAGE(decrypt_textfile);
         }
 
 
@@ -332,7 +332,7 @@ namespace Cryptography
                 // just to seprate the numbers converted 
                 else
                 {
-                    temp = temp + " # " + Cryptography.RSA_Algorithm_Implementation.Generator(Arr[i], Value_of_E, n);
+                    temp = temp + "#" + Cryptography.RSA_Algorithm_Implementation.Generator(Arr[i], Value_of_E, n);
                 }
 
             }
