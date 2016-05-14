@@ -208,23 +208,23 @@ namespace Cryptography
             // Decrytion Function called to decrypt the Text Document 
             decrypt_textfile = Decryption_Of_TextFile(Load_and_Save_TextFile);
 
-
+            
             // Converting Image Back to Bitmap from Byte 
-           // decryption_pictureBox.Image = Cryptography.Conversion.Conversion_To_BITMAP_IMAGE(decrypt_textfile);
+            // Also Fuunction called to handle the # Sign 
+            decryption_pictureBox.Image = Cryptography.Conversion.Conversion_To_BITMAP_IMAGE(Cryptography.Handler.HASH_SIGN_HANDLER(decrypt_textfile));
+
+            MessageBox.Show("Decryption  Successfully Performed ");
         }
 
-
-
-        //Decryption Function has some error
-
+        //In complete 
 
         // Function for Decrytion Of TextFile
         public string Decryption_Of_TextFile( String input)
         {
             // Value for secound array to be used globally 
-            int nested;
+            int nested = 0 ;
 
-            int Holder;
+            int Holder , i = 0;
 
             string temp = "";
 
@@ -237,30 +237,41 @@ namespace Cryptography
            // to Show user how much decryption  has been done
            DECRYTION_progressBar.Maximum = Arr.Length;
 
+
+            try
+            { 
             // To Decrypt Values Conveted in Char One By One in 
-            for (int i = 0 ; i < Arr.Length ; i++)
-            {
-
-                //Value Increased in Progress Bar
-                DECRYTION_progressBar.Value = i;
-
-
-                 temp = "";
-
-                // If their is an actual Value and not # that was used as a seprator this is implemented 
-                for(nested = i ; Arr[nested] != '#'; nested++)
+                for (; i < Arr.Length; i++)
                 {
-                    temp = temp + Arr[nested];
+                    Application.DoEvents();
+
+                    temp = "";
+
+                    //Value Increased in Progress Bar
+                    DECRYTION_progressBar.Value = i;
+
+
+
+
+                    // If their is an actual Value and not # that was used as a seprator this is implemented 
+                    for (nested = i; Arr[nested] != '#'; nested++)
+                    {
+                        temp = temp + Arr[nested];
+                    }
+
+                    i = nested;
+
+                    // Converting String Value Calculated in Integer to Apply Formula 
+                    Holder = int.Parse(temp);
+
+
+                    // Main function to produce Decrypted value 
+                    Funtion_Call_Value = Funtion_Call_Value + (Cryptography.RSA_Algorithm_Implementation.Generator(Holder, Value_of_D, Value_of_N));
                 }
+            }
 
-                i = nested;
-
-                // Converting String Value Calculated in Integer to Apply Formula 
-                Holder = int.Parse(temp);
-
-
-                // Main function to produce Decrypted value 
-                Funtion_Call_Value = Funtion_Call_Value + (Cryptography.RSA_Algorithm_Implementation.Generator(Holder, Value_of_D, Value_of_N));
+            catch (Exception eee)
+            {
 
             }
 
@@ -294,7 +305,7 @@ namespace Cryptography
             // To Create A new File Write that Specific String to that File and then Close that File
             File.WriteAllText(Save_Image_Location_textBox.Text, encrypt_image);
 
-            MessageBox.Show("Encryption Successfully Performed and File was Saved at Your Specified Location");
+            MessageBox.Show("Encryption Successfully Performed ");
 
         }
 
