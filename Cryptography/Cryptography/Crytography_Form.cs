@@ -214,6 +214,12 @@ namespace Cryptography
             decryption_pictureBox.Image = Cryptography.Conversion.Conversion_To_BITMAP_IMAGE(Cryptography.Handler.HASH_SIGN_HANDLER(decrypt_textfile));
 
             MessageBox.Show("Decryption  Successfully Performed ");
+
+
+            // To Save the image decrypted 
+            decryption_pictureBox.Image.Save(Save_TextBox_Locaion_textBox.Text, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+            MessageBox.Show("Image Saved ");
         }
 
         //In complete 
@@ -254,7 +260,7 @@ namespace Cryptography
 
 
                     // If their is an actual Value and not # that was used as a seprator this is implemented 
-                    for (nested = i; Arr[nested] != '#'; nested++)
+                    for (nested = i; Arr[nested] != '-'; nested++)
                     {
                         temp = temp + Arr[nested];
                     }
@@ -266,7 +272,7 @@ namespace Cryptography
 
 
                     // Main function to produce Decrypted value 
-                    Funtion_Call_Value = Funtion_Call_Value + (Cryptography.RSA_Algorithm_Implementation.Generator(Holder, Value_of_D, Value_of_N));
+                    Funtion_Call_Value = Funtion_Call_Value + ((char)Cryptography.RSA_Algorithm_Implementation.Generator(Holder, Value_of_D, Value_of_N));
                 }
             }
 
@@ -343,7 +349,7 @@ namespace Cryptography
                 // just to seprate the numbers converted 
                 else
                 {
-                    temp = temp + "#" + Cryptography.RSA_Algorithm_Implementation.Generator(Arr[i], Value_of_E, n);
+                    temp = temp + "-" + Cryptography.RSA_Algorithm_Implementation.Generator(Arr[i], Value_of_E, n);
                 }
 
             }
@@ -353,7 +359,7 @@ namespace Cryptography
         private void Select_File_button10_Click(object sender, EventArgs e)
         {
             OpenFileDialog OPEN_TEXT = new OpenFileDialog();
-            OPEN_TEXT.Filter = "Text |*.txt";                          //Only Accepts .txt Files
+            OPEN_TEXT.Filter = "Text|*.txt";                          //Only Accepts .txt Files
 
             if (OPEN_TEXT.ShowDialog() == DialogResult.OK)
             {
@@ -444,7 +450,7 @@ namespace Cryptography
             SaveFileDialog Object_For_Image = new SaveFileDialog();
 
             //Image Type allocated here
-            Object_For_Image.Filter = "JPG |*.JPG";
+            Object_For_Image.Filter = "JPG|*.JPG";
 
             //Assign a Location for Image to be Saved 
             if(Object_For_Image.ShowDialog() == DialogResult.OK)

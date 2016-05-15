@@ -24,11 +24,9 @@ namespace Cryptography
 
 
             for(int i = 0 ; i < Arr.Length ; i++)
-            {
-
                 byte_object[i] = Convert.ToByte(Arr[i], 16);
 
-            }
+            
 
             //returning the value
             return byte_object;
