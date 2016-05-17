@@ -279,6 +279,7 @@
             this.decryption_pictureBox.Location = new System.Drawing.Point(15, 19);
             this.decryption_pictureBox.Name = "decryption_pictureBox";
             this.decryption_pictureBox.Size = new System.Drawing.Size(287, 207);
+            this.decryption_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.decryption_pictureBox.TabIndex = 2;
             this.decryption_pictureBox.TabStop = false;
             // 
@@ -471,9 +472,11 @@
             // SaveImage_Button2
             // 
             this.SaveImage_Button2.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveImage_Button2.Location = new System.Drawing.Point(110, 58);
+            this.SaveImage_Button2.Image = global::Cryptography.Properties.Resources.Save;
+            this.SaveImage_Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SaveImage_Button2.Location = new System.Drawing.Point(111, 58);
             this.SaveImage_Button2.Name = "SaveImage_Button2";
-            this.SaveImage_Button2.Size = new System.Drawing.Size(263, 33);
+            this.SaveImage_Button2.Size = new System.Drawing.Size(262, 33);
             this.SaveImage_Button2.TabIndex = 2;
             this.SaveImage_Button2.Text = "Save Image";
             this.SaveImage_Button2.UseVisualStyleBackColor = true;
@@ -526,6 +529,7 @@
             this.Controls.Add(this.Cryptography_BY_RSA);
             this.Name = "Crytography_Form";
             this.Text = "Cryptography";
+            this.Load += new System.EventHandler(this.Crytography_Form_Load);
             this.tabPage2.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);

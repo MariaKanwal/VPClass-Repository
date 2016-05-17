@@ -44,19 +44,13 @@ namespace Cryptography
             // Array ^ 5 = a(a ^4)-- 
             else
             {
-                temp= ((array % N) * Generator(array, Value_E - 1, N)) % N;
+                temp = ((array % N) * Generator(array, Value_E - 1, N)) % N;
                 return temp;
 
             }
 
 
         }
-
-
-
-
-
-
 
     }
 

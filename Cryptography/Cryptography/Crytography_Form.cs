@@ -198,7 +198,7 @@ namespace Cryptography
         }
 
 
-        //Incomplete
+
         private void button6_Click(object sender, EventArgs e)
         {
             //Deccrytion of TextFile function called on Load and Save object that has textfile 
@@ -222,7 +222,6 @@ namespace Cryptography
             MessageBox.Show("Image Saved ");
         }
 
-        //In complete 
 
         // Function for Decrytion Of TextFile
         public string Decryption_Of_TextFile( String input)
@@ -466,6 +465,11 @@ namespace Cryptography
         }
 
         private void progressBar2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Crytography_Form_Load(object sender, EventArgs e)
         {
 
         }
