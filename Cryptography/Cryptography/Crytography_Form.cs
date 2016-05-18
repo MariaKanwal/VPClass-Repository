@@ -473,5 +473,10 @@ namespace Cryptography
         {
 
         }
+
+        private void encrytion_PictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
