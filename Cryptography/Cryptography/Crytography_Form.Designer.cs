@@ -118,11 +118,13 @@
             // 
             // Decrypt_textfile_button6
             // 
-            this.Decrypt_textfile_button6.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.Decrypt_textfile_button6.BackColor = System.Drawing.Color.LavenderBlush;
             this.Decrypt_textfile_button6.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Decrypt_textfile_button6.Location = new System.Drawing.Point(67, 28);
+            this.Decrypt_textfile_button6.Image = ((System.Drawing.Image)(resources.GetObject("Decrypt_textfile_button6.Image")));
+            this.Decrypt_textfile_button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Decrypt_textfile_button6.Location = new System.Drawing.Point(68, 29);
             this.Decrypt_textfile_button6.Name = "Decrypt_textfile_button6";
-            this.Decrypt_textfile_button6.Size = new System.Drawing.Size(150, 38);
+            this.Decrypt_textfile_button6.Size = new System.Drawing.Size(178, 34);
             this.Decrypt_textfile_button6.TabIndex = 2;
             this.Decrypt_textfile_button6.Text = "Decrypt Text File";
             this.Decrypt_textfile_button6.UseVisualStyleBackColor = false;
@@ -130,9 +132,9 @@
             // 
             // DECRYTION_progressBar
             // 
-            this.DECRYTION_progressBar.Location = new System.Drawing.Point(26, 72);
+            this.DECRYTION_progressBar.Location = new System.Drawing.Point(32, 83);
             this.DECRYTION_progressBar.Name = "DECRYTION_progressBar";
-            this.DECRYTION_progressBar.Size = new System.Drawing.Size(245, 40);
+            this.DECRYTION_progressBar.Size = new System.Drawing.Size(245, 29);
             this.DECRYTION_progressBar.TabIndex = 3;
             this.DECRYTION_progressBar.Click += new System.EventHandler(this.progressBar2_Click);
             // 
@@ -157,7 +159,7 @@
             // 
             // Store_TextFile_Location_button
             // 
-            this.Store_TextFile_Location_button.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.Store_TextFile_Location_button.BackColor = System.Drawing.Color.LavenderBlush;
             this.Store_TextFile_Location_button.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Store_TextFile_Location_button.Location = new System.Drawing.Point(443, 31);
             this.Store_TextFile_Location_button.Name = "Store_TextFile_Location_button";
@@ -218,11 +220,11 @@
             // 
             // DEC_AssignValues_button8
             // 
-            this.DEC_AssignValues_button8.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.DEC_AssignValues_button8.BackColor = System.Drawing.Color.LavenderBlush;
             this.DEC_AssignValues_button8.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DEC_AssignValues_button8.Location = new System.Drawing.Point(123, 111);
+            this.DEC_AssignValues_button8.Location = new System.Drawing.Point(143, 111);
             this.DEC_AssignValues_button8.Name = "DEC_AssignValues_button8";
-            this.DEC_AssignValues_button8.Size = new System.Drawing.Size(262, 34);
+            this.DEC_AssignValues_button8.Size = new System.Drawing.Size(214, 34);
             this.DEC_AssignValues_button8.TabIndex = 1;
             this.DEC_AssignValues_button8.Text = "Assign Values";
             this.DEC_AssignValues_button8.UseVisualStyleBackColor = false;
@@ -252,7 +254,7 @@
             // 
             // Select_File_button
             // 
-            this.Select_File_button.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.Select_File_button.BackColor = System.Drawing.Color.LavenderBlush;
             this.Select_File_button.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Select_File_button.Location = new System.Drawing.Point(443, 19);
             this.Select_File_button.Name = "Select_File_button";
@@ -264,11 +266,13 @@
             // 
             // Save_Textfile_button
             // 
-            this.Save_Textfile_button.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.Save_Textfile_button.BackColor = System.Drawing.Color.LavenderBlush;
             this.Save_Textfile_button.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Save_Textfile_button.Location = new System.Drawing.Point(123, 51);
+            this.Save_Textfile_button.Image = global::Cryptography.Properties.Resources.Save;
+            this.Save_Textfile_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Save_Textfile_button.Location = new System.Drawing.Point(143, 49);
             this.Save_Textfile_button.Name = "Save_Textfile_button";
-            this.Save_Textfile_button.Size = new System.Drawing.Size(262, 33);
+            this.Save_Textfile_button.Size = new System.Drawing.Size(214, 33);
             this.Save_Textfile_button.TabIndex = 6;
             this.Save_Textfile_button.Text = "Save Text File";
             this.Save_Textfile_button.UseVisualStyleBackColor = false;
@@ -330,9 +334,9 @@
             this.Encrypt_Image_button5.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Encrypt_Image_button5.Image = ((System.Drawing.Image)(resources.GetObject("Encrypt_Image_button5.Image")));
             this.Encrypt_Image_button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Encrypt_Image_button5.Location = new System.Drawing.Point(73, 23);
+            this.Encrypt_Image_button5.Location = new System.Drawing.Point(76, 33);
             this.Encrypt_Image_button5.Name = "Encrypt_Image_button5";
-            this.Encrypt_Image_button5.Size = new System.Drawing.Size(163, 38);
+            this.Encrypt_Image_button5.Size = new System.Drawing.Size(171, 33);
             this.Encrypt_Image_button5.TabIndex = 2;
             this.Encrypt_Image_button5.Text = "Encrypt Image";
             this.Encrypt_Image_button5.UseVisualStyleBackColor = false;
@@ -340,9 +344,9 @@
             // 
             // ENCRYTION_progressBar
             // 
-            this.ENCRYTION_progressBar.Location = new System.Drawing.Point(18, 60);
+            this.ENCRYTION_progressBar.Location = new System.Drawing.Point(40, 74);
             this.ENCRYTION_progressBar.Name = "ENCRYTION_progressBar";
-            this.ENCRYTION_progressBar.Size = new System.Drawing.Size(245, 40);
+            this.ENCRYTION_progressBar.Size = new System.Drawing.Size(245, 25);
             this.ENCRYTION_progressBar.TabIndex = 3;
             // 
             // groupBox4
@@ -410,6 +414,7 @@
             this.textBox_PrimeNO_1.Name = "textBox_PrimeNO_1";
             this.textBox_PrimeNO_1.Size = new System.Drawing.Size(233, 24);
             this.textBox_PrimeNO_1.TabIndex = 3;
+            this.textBox_PrimeNO_1.TextChanged += new System.EventHandler(this.textBox_PrimeNO_1_TextChanged);
             // 
             // label2
             // 
@@ -423,7 +428,7 @@
             // 
             // textBox_PrimeNo_2
             // 
-            this.textBox_PrimeNo_2.Location = new System.Drawing.Point(270, 66);
+            this.textBox_PrimeNo_2.Location = new System.Drawing.Point(270, 60);
             this.textBox_PrimeNo_2.Name = "textBox_PrimeNo_2";
             this.textBox_PrimeNo_2.Size = new System.Drawing.Size(233, 24);
             this.textBox_PrimeNo_2.TabIndex = 4;
@@ -443,9 +448,9 @@
             // 
             this.ENC_Assign_Values_Button3.BackColor = System.Drawing.Color.LavenderBlush;
             this.ENC_Assign_Values_Button3.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ENC_Assign_Values_Button3.Location = new System.Drawing.Point(137, 127);
+            this.ENC_Assign_Values_Button3.Location = new System.Drawing.Point(160, 122);
             this.ENC_Assign_Values_Button3.Name = "ENC_Assign_Values_Button3";
-            this.ENC_Assign_Values_Button3.Size = new System.Drawing.Size(224, 33);
+            this.ENC_Assign_Values_Button3.Size = new System.Drawing.Size(185, 33);
             this.ENC_Assign_Values_Button3.TabIndex = 6;
             this.ENC_Assign_Values_Button3.Text = "Assign Values";
             this.ENC_Assign_Values_Button3.UseVisualStyleBackColor = false;
@@ -499,9 +504,9 @@
             this.SaveImage_Button2.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveImage_Button2.Image = global::Cryptography.Properties.Resources.Save;
             this.SaveImage_Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SaveImage_Button2.Location = new System.Drawing.Point(137, 61);
+            this.SaveImage_Button2.Location = new System.Drawing.Point(160, 61);
             this.SaveImage_Button2.Name = "SaveImage_Button2";
-            this.SaveImage_Button2.Size = new System.Drawing.Size(224, 33);
+            this.SaveImage_Button2.Size = new System.Drawing.Size(185, 33);
             this.SaveImage_Button2.TabIndex = 2;
             this.SaveImage_Button2.Text = "Save Image";
             this.SaveImage_Button2.UseVisualStyleBackColor = false;
@@ -556,6 +561,7 @@
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(887, 437);
             this.Controls.Add(this.Cryptography_BY_RSA);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Crytography_Form";
             this.Text = "Cryptography";
             this.TransparencyKey = System.Drawing.Color.Teal;

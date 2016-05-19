@@ -45,86 +45,113 @@ namespace Cryptography
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (ENC_Assign_Values_Button3.Text == "Assign Values")
-            {
-                // To take Input From User and Make sure that all of the textboxes had values
 
-                if (textBox_PrimeNO_1.Text == "" || textBox_PrimeNo_2.Text == "" || textBox_Value_of_E.Text == "")
+      
+                if (ENC_Assign_Values_Button3.Text == "Assign Values")
                 {
-                    MessageBox.Show("Please Fill All The Assocaited Feilds");
-                }
+                    // To take Input From User and Make sure that all of the textboxes had values
 
 
+
+                    if (textBox_PrimeNO_1.Text == "" || textBox_PrimeNo_2.Text == "" || textBox_Value_of_E.Text == "")
+                    {
+                        MessageBox.Show("Please Fill All The Assocaited Feilds");
+                    }
+
+
+
+                    else
+                    {
+                        try
+                        {
+
+                            // Assigning value for First Prime Number 
+                            //Calls the Prime_Number_Checker Function from Implemenattion class 
+
+                            //If number entered is a prime Number it is assigned 
+                            try
+                            {
+                                if (Cryptography.Checker.Prime_Number_Checker(int.Parse(textBox_PrimeNO_1.Text)))
+                                {
+                                    Prime_Number_1 = int.Parse(textBox_PrimeNO_1.Text);
+                                }
+
+
+
+                                // If number is not a prime number user is informed 
+                                else
+                                {
+                                    textBox_PrimeNO_1.Text = "";
+                                    MessageBox.Show(" You didn't Enter A Prime Number , Please TRY AGAIN");
+                                    return;
+                                }
+                            }
+                            catch (Exception E)
+                            {
+                                MessageBox.Show(E.Message);
+                            }
+                        
+
+
+
+                            //Assign Value for Secound Prime Number 
+                            //Number entered by User was a Prime Number
+                            if (Cryptography.Checker.Prime_Number_Checker(int.Parse(textBox_PrimeNo_2.Text)))
+                            {
+                                Prime_Number_2 = int.Parse(textBox_PrimeNo_2.Text);
+                            }
+
+                             // Number Entered By User was not Prime so User was Informed and the Text Box was cleared for taking new value
+                            else
+                            {
+                                textBox_PrimeNo_2.Text = "";
+                                MessageBox.Show("You didn't Enter A Prime Number , Please TRY AGAIN");
+                                return;
+                            }
+
+
+
+                            //Assign Value For Value of Encryion Exponenet 
+                            // Calculating Value of "n" to check co prime between n and E
+                            int VALUE_OF_PHI = Cryptography.RSA_Algorithm_Implementation.Value_Of_N_Calculator((Prime_Number_1 - 1), (Prime_Number_2 - 1));
+
+
+                            //If e was coprime of n
+                            if (Cryptography.Checker.CoPrime_Checker(VALUE_OF_PHI, (int.Parse(textBox_Value_of_E.Text))))
+                            {
+                                Value_of_E = int.Parse(textBox_Value_of_E.Text);
+                            }
+                            // if e was not coprime of n
+                            else
+                            {
+                                textBox_Value_of_E.Text = "";
+                                MessageBox.Show("Please Enter a Relative Prime Number");
+                                return;
+                            }
+
+                            //To show that All the Values are assgined for Encryption 
+                            MessageBox.Show("You Have Sucessfuly Assigned all values");
+                        }
+
+
+                        catch (Exception ec)
+                        {
+                            MessageBox.Show(ec.Message);
+                        }
+                    }
+
+        }
+        
 
                 else
                 {
-
-
-                    // Assigning value for First Prime Number 
-                    //Calls the Prime_Number_Checker Function from Implemenattion class 
-
-                    //If number entered is a prime Number it is assigned 
-                    if (Cryptography.Checker.Prime_Number_Checker(int.Parse(textBox_PrimeNO_1.Text)))
-                    {
-                        Prime_Number_1 = int.Parse(textBox_PrimeNO_1.Text);
-                    }
-                    // If number is not a prime number user is informed 
-                    else
-                    {
-                        textBox_PrimeNO_1.Text = "";
-                        MessageBox.Show(" You didn't Enter A Prime Number , Please TRY AGAIN");
-                        return;
-                    }
-
-
-
-                    //Assign Value for Secound Prime Number 
-                    //Number entered by User was a Prime Number
-                    if (Cryptography.Checker.Prime_Number_Checker(int.Parse(textBox_PrimeNo_2.Text)))
-                    {
-                        Prime_Number_2 = int.Parse(textBox_PrimeNo_2.Text);
-                    }
-
-                     // Number Entered By User was not Prime so User was Informed and the Text Box was cleared for taking new value
-                    else
-                    {
-                        textBox_PrimeNo_2.Text = "";
-                        MessageBox.Show("You didn't Enter A Prime Number , Please TRY AGAIN");
-                        return;
-                    }
-
-
-
-                    //Assign Value For Value of Encryion Exponenet 
-                    // Calculating Value of "n" to check co prime between n and E
-                    int VALUE_OF_PHI = Cryptography.RSA_Algorithm_Implementation.Value_Of_N_Calculator((Prime_Number_1 - 1), (Prime_Number_2 - 1));
-
-
-                    //If e was coprime of n
-                    if (Cryptography.Checker.CoPrime_Checker(VALUE_OF_PHI, (int.Parse(textBox_Value_of_E.Text))))
-                    {
-                        Value_of_E = int.Parse(textBox_Value_of_E.Text);
-                    }
-                    // if e was not coprime of n
-                    else
-                    {
-                        textBox_Value_of_E.Text = "";
-                        MessageBox.Show("Please Enter a Relative Prime Number");
-                        return;
-                    }
-
-                    //To show that All the Values are assgined for Encryption 
-                    MessageBox.Show("You Have Sucessfuly Assigned all values");
+                    textBox_PrimeNO_1.Text = "";
+                    textBox_PrimeNo_2.Text = "";
+                    textBox_Value_of_E.Text = "";
                 }
+            
 
-            }
 
-            else
-            {
-                textBox_PrimeNO_1.Text = "";
-                textBox_PrimeNo_2.Text = "";
-                textBox_Value_of_E.Text = "";
-            }
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -219,7 +246,7 @@ namespace Cryptography
             // To Save the image decrypted 
             decryption_pictureBox.Image.Save(Save_TextBox_Locaion_textBox.Text, System.Drawing.Imaging.ImageFormat.Jpeg);
 
-            MessageBox.Show("Image Saved ");
+            MessageBox.Show("Image Saved at your specified location ");
         }
 
 
@@ -475,6 +502,11 @@ namespace Cryptography
         }
 
         private void encrytion_PictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_PrimeNO_1_TextChanged(object sender, EventArgs e)
         {
 
         }
