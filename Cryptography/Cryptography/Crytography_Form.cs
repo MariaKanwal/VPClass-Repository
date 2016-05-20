@@ -45,8 +45,9 @@ namespace Cryptography
 
         private void button3_Click(object sender, EventArgs e)
         {
+            try
+            {
 
-      
                 if (ENC_Assign_Values_Button3.Text == "Assign Values")
                 {
                     // To take Input From User and Make sure that all of the textboxes had values
@@ -62,86 +63,71 @@ namespace Cryptography
 
                     else
                     {
-                        try
+
+                        // Assigning value for First Prime Number 
+                        //Calls the Prime_Number_Checker Function from Implemenattion class 
+
+                        //If number entered is a prime Number it is assigned 
+
+                        if (Cryptography.Checker.Prime_Number_Checker(int.Parse(textBox_PrimeNO_1.Text)))
                         {
-
-                            // Assigning value for First Prime Number 
-                            //Calls the Prime_Number_Checker Function from Implemenattion class 
-
-                            //If number entered is a prime Number it is assigned 
-                            try
-                            {
-                                if (Cryptography.Checker.Prime_Number_Checker(int.Parse(textBox_PrimeNO_1.Text)))
-                                {
-                                    Prime_Number_1 = int.Parse(textBox_PrimeNO_1.Text);
-                                }
-
-
-
-                                // If number is not a prime number user is informed 
-                                else
-                                {
-                                    textBox_PrimeNO_1.Text = "";
-                                    MessageBox.Show(" You didn't Enter A Prime Number , Please TRY AGAIN");
-                                    return;
-                                }
-                            }
-                            catch (Exception E)
-                            {
-                                MessageBox.Show(E.Message);
-                            }
-                        
-
-
-
-                            //Assign Value for Secound Prime Number 
-                            //Number entered by User was a Prime Number
-                            if (Cryptography.Checker.Prime_Number_Checker(int.Parse(textBox_PrimeNo_2.Text)))
-                            {
-                                Prime_Number_2 = int.Parse(textBox_PrimeNo_2.Text);
-                            }
-
-                             // Number Entered By User was not Prime so User was Informed and the Text Box was cleared for taking new value
-                            else
-                            {
-                                textBox_PrimeNo_2.Text = "";
-                                MessageBox.Show("You didn't Enter A Prime Number , Please TRY AGAIN");
-                                return;
-                            }
-
-
-
-                            //Assign Value For Value of Encryion Exponenet 
-                            // Calculating Value of "n" to check co prime between n and E
-                            int VALUE_OF_PHI = Cryptography.RSA_Algorithm_Implementation.Value_Of_N_Calculator((Prime_Number_1 - 1), (Prime_Number_2 - 1));
-
-
-                            //If e was coprime of n
-                            if (Cryptography.Checker.CoPrime_Checker(VALUE_OF_PHI, (int.Parse(textBox_Value_of_E.Text))))
-                            {
-                                Value_of_E = int.Parse(textBox_Value_of_E.Text);
-                            }
-                            // if e was not coprime of n
-                            else
-                            {
-                                textBox_Value_of_E.Text = "";
-                                MessageBox.Show("Please Enter a Relative Prime Number");
-                                return;
-                            }
-
-                            //To show that All the Values are assgined for Encryption 
-                            MessageBox.Show("You Have Sucessfuly Assigned all values");
+                            Prime_Number_1 = int.Parse(textBox_PrimeNO_1.Text);
                         }
 
 
-                        catch (Exception ec)
+
+                        // If number is not a prime number user is informed 
+                        else
                         {
-                            MessageBox.Show(ec.Message);
+                            textBox_PrimeNO_1.Text = "";
+                            MessageBox.Show(" You didn't Enter A Prime Number , Please TRY AGAIN");
+                            return;
                         }
+
+
+
+                        //Assign Value for Secound Prime Number 
+                        //Number entered by User was a Prime Number
+                        if (Cryptography.Checker.Prime_Number_Checker(int.Parse(textBox_PrimeNo_2.Text)))
+                        {
+                            Prime_Number_2 = int.Parse(textBox_PrimeNo_2.Text);
+                        }
+
+                         // Number Entered By User was not Prime so User was Informed and the Text Box was cleared for taking new value
+                        else
+                        {
+                            textBox_PrimeNo_2.Text = "";
+                            MessageBox.Show("You didn't Enter A Prime Number , Please TRY AGAIN");
+                            return;
+                        }
+
+
+
+                        //Assign Value For Value of Encryion Exponenet 
+                        // Calculating Value of "n" to check co prime between n and E
+                        int VALUE_OF_PHI = Cryptography.RSA_Algorithm_Implementation.Value_Of_N_Calculator((Prime_Number_1 - 1), (Prime_Number_2 - 1));
+
+
+                        //If e was coprime of n
+                        if (Cryptography.Checker.CoPrime_Checker(VALUE_OF_PHI, (int.Parse(textBox_Value_of_E.Text))))
+                        {
+                            Value_of_E = int.Parse(textBox_Value_of_E.Text);
+                        }
+                        // if e was not coprime of n
+                        else
+                        {
+                            textBox_Value_of_E.Text = "";
+                            MessageBox.Show("Please Enter a Relative Prime Number");
+                            return;
+                        }
+
+                        //To show that All the Values are assgined for Encryption 
+                        MessageBox.Show("You Have Sucessfuly Assigned all values");
                     }
+                }
 
-        }
-        
+
+
 
                 else
                 {
@@ -149,9 +135,13 @@ namespace Cryptography
                     textBox_PrimeNo_2.Text = "";
                     textBox_Value_of_E.Text = "";
                 }
-            
 
-
+            }
+                
+            catch(Exception M)
+            {
+                MessageBox.Show(M.Message);
+            }
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -166,56 +156,76 @@ namespace Cryptography
 
         private void Select_button1_Click(object sender, EventArgs e)
         {
-
-            OpenFileDialog OPENIMAGE = new OpenFileDialog();
-            OPENIMAGE.Filter = "ImageFile(*.JPG)|*.JPG";      // only accepts JPG Files
-
-            if (OPENIMAGE.ShowDialog() == DialogResult.OK)
+            try
             {
-                Image_Source_textbox.Text = OPENIMAGE.FileName; // For Taking Image from User
-                encrytion_PictureBox.Image = Image.FromFile(Image_Source_textbox.Text); //shows image in the Picture Box
+                OpenFileDialog OPENIMAGE = new OpenFileDialog();
+                OPENIMAGE.Filter = "ImageFile(*.JPG)|*.JPG";      // only accepts JPG Files
 
+                if (OPENIMAGE.ShowDialog() == DialogResult.OK)
+                {
+                    Image_Source_textbox.Text = OPENIMAGE.FileName; // For Taking Image from User
+                    encrytion_PictureBox.Image = Image.FromFile(Image_Source_textbox.Text); //shows image in the Picture Box
+
+                }
+
+                else
+                {
+                    Image_Source_textbox.Text = "";
+                }
             }
 
-            else
-            {
-                Image_Source_textbox.Text = "";
-            }
-
+            catch (Exception Button1)
+                {
+                    MessageBox.Show(Button1.Message);
+                }
 
         }
 
         private void SaveImage_Bbutton2_Click(object sender, EventArgs e)
         {
-            Load_and_Save_Image = BitConverter.ToString(Conversion.Conversion_To_BYTE_ARRAY(encrytion_PictureBox.Image));
-            //For Calling the bitmap image to byte converter function from implementation class with help of BITCONVERTER library 
+            try
+            {
+                Load_and_Save_Image = BitConverter.ToString(Conversion.Conversion_To_BYTE_ARRAY(encrytion_PictureBox.Image));
+                //For Calling the bitmap image to byte converter function from implementation class with help of BITCONVERTER library 
 
-            MessageBox.Show("Image Selected was Saved For Encryption ");
+                MessageBox.Show("Image Selected was Saved For Encryption ");
+            }
 
+            catch (Exception R)
+            {
+                MessageBox.Show(R.Message);
+            }
         }
 
 
 
         private void Store_Location_button4_Click(object sender, EventArgs e)
         {
-            //To Display a Save Dialouge so User Can Save Encrypted Image in form Of TextFile
-            SaveFileDialog Object_For_TextFile= new SaveFileDialog();
-
-            //File Type allocated here
-            Object_For_TextFile.Filter = "Text|*.txt";
-
-            //Assign a Location for Document to be Saved 
-            if (Object_For_TextFile.ShowDialog() == DialogResult.OK)
+            try
             {
-                Save_Image_Location_textBox.Text = Object_For_TextFile.FileName;
+                //To Display a Save Dialouge so User Can Save Encrypted Image in form Of TextFile
+                SaveFileDialog Object_For_TextFile = new SaveFileDialog();
+
+                //File Type allocated here
+                Object_For_TextFile.Filter = "Text|*.txt";
+
+                //Assign a Location for Document to be Saved 
+                if (Object_For_TextFile.ShowDialog() == DialogResult.OK)
+                {
+                    Save_Image_Location_textBox.Text = Object_For_TextFile.FileName;
+                }
+
+                // Else show the TextBox as Empty
+                else
+                {
+                    Save_Image_Location_textBox.Text = "";
+                }
             }
 
-            // Else show the TextBox as Empty
-            else
+            catch(Exception W)
             {
-                Save_Image_Location_textBox.Text = "";
+                MessageBox.Show(W.Message);
             }
-
 
         }
 
@@ -235,7 +245,7 @@ namespace Cryptography
             // Decrytion Function called to decrypt the Text Document 
             decrypt_textfile = Decryption_Of_TextFile(Load_and_Save_TextFile);
 
-            
+
             // Converting Image Back to Bitmap from Byte 
             // Also Fuunction called to handle the # Sign 
             decryption_pictureBox.Image = Cryptography.Conversion.Conversion_To_BITMAP_IMAGE(Cryptography.Handler.HASH_SIGN_HANDLER(decrypt_textfile));
@@ -251,28 +261,28 @@ namespace Cryptography
 
 
         // Function for Decrytion Of TextFile
-        public string Decryption_Of_TextFile( String input)
+        public string Decryption_Of_TextFile(String input)
         {
             // Value for secound array to be used globally 
-            int nested = 0 ;
+            int nested = 0;
 
-            int Holder , i = 0;
+            int Holder, i = 0;
 
             string temp = "";
 
-            string Funtion_Call_Value = "" ;
+            string Funtion_Call_Value = "";
 
 
-          // Input TextFile Recieved Assigned and Converted To Char Array 
-           char[]  Arr= input.ToCharArray();
+            // Input TextFile Recieved Assigned and Converted To Char Array 
+            char[] Arr = input.ToCharArray();
 
-           // to Show user how much decryption  has been done
-           DECRYTION_progressBar.Maximum = Arr.Length;
+            // to Show user how much decryption  has been done
+            DECRYTION_progressBar.Maximum = Arr.Length;
 
 
             try
-            { 
-            // To Decrypt Values Conveted in Char One By One in 
+            {
+                // To Decrypt Values Conveted in Char One By One in 
                 for (; i < Arr.Length; i++)
                 {
                     Application.DoEvents();
@@ -325,19 +335,28 @@ namespace Cryptography
 
         private void button5_Click(object sender, EventArgs e)
         {
-            //Calculating Value of N by calling Function From RSA_Algorithm Implementation Class on both Prime Numbers
+            try
+            {
+                //Calculating Value of N by calling Function From RSA_Algorithm Implementation Class on both Prime Numbers
 
-            n = Cryptography.RSA_Algorithm_Implementation.Value_Of_N_Calculator(Prime_Number_1, Prime_Number_2);
+                n = Cryptography.RSA_Algorithm_Implementation.Value_Of_N_Calculator(Prime_Number_1, Prime_Number_2);
 
 
-            //Encrytion of Image function called on Load and Save object that has image stored in form of bitmap 
-            String encrypt_image;
-            encrypt_image = Encryption_Of_Image(Load_and_Save_Image);
+                //Encrytion of Image function called on Load and Save object that has image stored in form of bitmap 
+                String encrypt_image;
+                encrypt_image = Encryption_Of_Image(Load_and_Save_Image);
 
-            // To Create A new File Write that Specific String to that File and then Close that File
-            File.WriteAllText(Save_Image_Location_textBox.Text, encrypt_image);
+                // To Create A new File Write that Specific String to that File and then Close that File
+                File.WriteAllText(Save_Image_Location_textBox.Text, encrypt_image);
 
-            MessageBox.Show("Encryption Successfully Performed ");
+                MessageBox.Show("Encryption Successfully Performed ");
+            }
+
+            catch (Exception Q)
+            {
+                MessageBox.Show(Q.Message);
+            }
+
 
         }
 
