@@ -490,7 +490,7 @@
             // 
             this.Select_button1.BackColor = System.Drawing.Color.MistyRose;
             this.Select_button1.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Select_button1.Location = new System.Drawing.Point(428, 25);
+            this.Select_button1.Location = new System.Drawing.Point(428, 21);
             this.Select_button1.Name = "Select_button1";
             this.Select_button1.Size = new System.Drawing.Size(56, 35);
             this.Select_button1.TabIndex = 1;

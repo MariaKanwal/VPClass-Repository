@@ -138,19 +138,28 @@ namespace Cryptography
 
             }
                 
-            catch(Exception M)
+            catch(Exception ENC_VALUE)
             {
-                MessageBox.Show(M.Message);
+                MessageBox.Show(ENC_VALUE.Message);
             }
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            // For Loading TextFile and Reading From Text File
-            Load_and_Save_TextFile = File.ReadAllText(Textfile_textBox.Text);
+
+            try
+            {
+                // For Loading TextFile and Reading From Text File
+                Load_and_Save_TextFile = File.ReadAllText(Textfile_textBox.Text);
 
 
-            MessageBox.Show("TextFile Selected was Saved For Decryption ");
+                MessageBox.Show("TextFile Selected was Saved For Decryption ");
+            }
+
+            catch (Exception SAVE)
+            {
+                MessageBox.Show(SAVE.Message);
+            }
 
         }
 
@@ -174,9 +183,9 @@ namespace Cryptography
                 }
             }
 
-            catch (Exception Button1)
+            catch (Exception ENC_SELECT)
                 {
-                    MessageBox.Show(Button1.Message);
+                    MessageBox.Show(ENC_SELECT.Message);
                 }
 
         }
@@ -191,9 +200,9 @@ namespace Cryptography
                 MessageBox.Show("Image Selected was Saved For Encryption ");
             }
 
-            catch (Exception R)
+            catch (Exception ENC_SAVE)
             {
-                MessageBox.Show(R.Message);
+                MessageBox.Show(ENC_SAVE.Message);
             }
         }
 
@@ -222,9 +231,9 @@ namespace Cryptography
                 }
             }
 
-            catch(Exception W)
+            catch(Exception ENC_STORE)
             {
-                MessageBox.Show(W.Message);
+                MessageBox.Show(ENC_STORE.Message);
             }
 
         }
@@ -238,25 +247,34 @@ namespace Cryptography
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //Deccrytion of TextFile function called on Load and Save object that has textfile 
+            try
+            {
 
-            String decrypt_textfile;
+                //Deccrytion of TextFile function called on Load and Save object that has textfile 
 
-            // Decrytion Function called to decrypt the Text Document 
-            decrypt_textfile = Decryption_Of_TextFile(Load_and_Save_TextFile);
+                String decrypt_textfile;
 
-
-            // Converting Image Back to Bitmap from Byte 
-            // Also Fuunction called to handle the # Sign 
-            decryption_pictureBox.Image = Cryptography.Conversion.Conversion_To_BITMAP_IMAGE(Cryptography.Handler.HASH_SIGN_HANDLER(decrypt_textfile));
-
-            MessageBox.Show("Decryption  Successfully Performed ");
+                // Decrytion Function called to decrypt the Text Document 
+                decrypt_textfile = Decryption_Of_TextFile(Load_and_Save_TextFile);
 
 
-            // To Save the image decrypted 
-            decryption_pictureBox.Image.Save(Save_TextBox_Locaion_textBox.Text, System.Drawing.Imaging.ImageFormat.Jpeg);
+                // Converting Image Back to Bitmap from Byte 
+                // Also Fuunction called to handle the # Sign 
+                decryption_pictureBox.Image = Cryptography.Conversion.Conversion_To_BITMAP_IMAGE(Cryptography.Handler.HASH_SIGN_HANDLER(decrypt_textfile));
 
-            MessageBox.Show("Image Saved at your specified location ");
+                MessageBox.Show("Decryption  Successfully Performed ");
+
+
+                // To Save the image decrypted 
+                decryption_pictureBox.Image.Save(Save_TextBox_Locaion_textBox.Text, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                MessageBox.Show("Image Saved at your specified location ");
+            }
+
+            catch (Exception DEC)
+            {
+                MessageBox.Show(DEC.Message);
+            }
         }
 
 
@@ -352,9 +370,9 @@ namespace Cryptography
                 MessageBox.Show("Encryption Successfully Performed ");
             }
 
-            catch (Exception Q)
+            catch (Exception ENC)
             {
-                MessageBox.Show(Q.Message);
+                MessageBox.Show(ENC.Message);
             }
 
 
@@ -425,88 +443,106 @@ namespace Cryptography
 
         private void DEC_AssignValues_button8_Click(object sender, EventArgs e)
         {
-
-            if (DEC_AssignValues_button8.Text == "Assign Values")
+            try
             {
-
-                // To take Input From User and Make sure that all of the textboxes had values
-
-                if (textBox_Value_of_D.Text == "" || textBox_Value_Of_N.Text == "")
+                if (DEC_AssignValues_button8.Text == "Assign Values")
                 {
-                    MessageBox.Show("Please Fill All The Assocaited Feilds");
+
+                    // To take Input From User and Make sure that all of the textboxes had values
+
+                    if (textBox_Value_of_D.Text == "" || textBox_Value_Of_N.Text == "")
+                    {
+                        MessageBox.Show("Please Fill All The Assocaited Feilds");
+                    }
+
+
+                    else
+                    {
+                        // Assigning value Of D
+
+
+                        //If number entered is greater than 0  it is assigned 
+                        if (int.Parse(textBox_Value_of_D.Text) > 0)
+                        {
+                            Value_of_D = int.Parse(textBox_Value_of_D.Text);
+                        }
+
+
+                       // Else user is informed 
+                        else
+                        {
+                            textBox_Value_of_D.Text = "";
+                            MessageBox.Show("You didn't Enter A Number Greater Than Zero  , Please TRY AGAIN");
+                            return;
+                        }
+
+                        // Assigning value Of N
+
+                        //If number entered is greater than 0  it is assigned 
+                        if (int.Parse(textBox_Value_Of_N.Text) > 0)
+                        {
+                            Value_of_N = int.Parse(textBox_Value_Of_N.Text);
+                        }
+
+
+                        // Else user is informed
+                        else
+                        {
+                            textBox_Value_Of_N.Text = "";
+                            MessageBox.Show("You didn't Enter A Number Greater Than Zero  , Please TRY AGAIN");
+                            return;
+                        }
+
+
+                        //To show that All the Values are assgined for Decryption 
+                        MessageBox.Show("You Have Sucessfuly Assigned all values");
+                    }
+
+
                 }
 
 
                 else
                 {
-                    // Assigning value Of D
-
-
-                    //If number entered is greater than 0  it is assigned 
-                    if (int.Parse(textBox_Value_of_D.Text) > 0)
-                    {
-                        Value_of_D = int.Parse(textBox_Value_of_D.Text);
-                    }
-
-
-                   // Else user is informed 
-                    else
-                    {
-                        textBox_Value_of_D.Text = "";
-                        MessageBox.Show("You didn't Enter A Number Greater Than Zero  , Please TRY AGAIN");
-                        return;
-                    }
-
-                    // Assigning value Of N
-
-                    //If number entered is greater than 0  it is assigned 
-                    if (int.Parse(textBox_Value_Of_N.Text) > 0)
-                    {
-                        Value_of_N = int.Parse(textBox_Value_Of_N.Text);
-                    }
-
-
-                    // Else user is informed
-                    else
-                    {
-                        textBox_Value_Of_N.Text = "";
-                        MessageBox.Show("You didn't Enter A Number Greater Than Zero  , Please TRY AGAIN");
-                        return;
-                    }
-
-
-                    //To show that All the Values are assgined for Decryption 
-                    MessageBox.Show("You Have Sucessfuly Assigned all values");
+                    textBox_Value_of_D.Text = "";
+                    textBox_Value_Of_N.Text = "";
                 }
-
             }
 
-            else
+            catch (Exception DEC_VALUES)
             {
-                textBox_Value_of_D.Text = "";
-                textBox_Value_Of_N.Text = "";
+                MessageBox.Show(DEC_VALUES.Message);
             }
+
 
         }
 
         private void Store_TextFile_Location_button7_Click(object sender, EventArgs e)
         {
-            //To Display a Save Dialouge so User Can Save Decrypted TextFile in form Of Image
-            SaveFileDialog Object_For_Image = new SaveFileDialog();
-
-            //Image Type allocated here
-            Object_For_Image.Filter = "JPG|*.JPG";
-
-            //Assign a Location for Image to be Saved 
-            if(Object_For_Image.ShowDialog() == DialogResult.OK)
+            try
             {
-                Save_TextBox_Locaion_textBox.Text = Object_For_Image.FileName;
+                //To Display a Save Dialouge so User Can Save Decrypted TextFile in form Of Image
+                SaveFileDialog Object_For_Image = new SaveFileDialog();
+
+                //Image Type allocated here
+                Object_For_Image.Filter = "JPG|*.JPG";
+
+                //Assign a Location for Image to be Saved 
+                if (Object_For_Image.ShowDialog() == DialogResult.OK)
+                {
+                    Save_TextBox_Locaion_textBox.Text = Object_For_Image.FileName;
+                }
+
+                // Else show the TextBox as Empty
+                else
+                {
+                    Save_TextBox_Locaion_textBox.Text = "";
+                }
             }
 
-            // Else show the TextBox as Empty
-            else
+            catch(Exception DEC_STORE)
             {
-                Save_TextBox_Locaion_textBox.Text = "";
+                MessageBox.Show(DEC_STORE.Message);
             }
         }
 
