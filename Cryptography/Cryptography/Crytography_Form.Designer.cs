@@ -291,7 +291,7 @@
             // 
             // decryption_pictureBox
             // 
-            this.decryption_pictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.decryption_pictureBox.BackColor = System.Drawing.Color.Gainsboro;
             this.decryption_pictureBox.Location = new System.Drawing.Point(15, 19);
             this.decryption_pictureBox.Name = "decryption_pictureBox";
             this.decryption_pictureBox.Size = new System.Drawing.Size(287, 207);
@@ -534,7 +534,7 @@
             // 
             // encrytion_PictureBox
             // 
-            this.encrytion_PictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.encrytion_PictureBox.BackColor = System.Drawing.Color.Gainsboro;
             this.encrytion_PictureBox.Location = new System.Drawing.Point(15, 19);
             this.encrytion_PictureBox.Name = "encrytion_PictureBox";
             this.encrytion_PictureBox.Size = new System.Drawing.Size(276, 207);
