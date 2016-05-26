@@ -56,7 +56,7 @@ namespace Cryptography
 
                     if (textBox_PrimeNO_1.Text == "" || textBox_PrimeNo_2.Text == "" || textBox_Value_of_E.Text == "")
                     {
-                        MessageBox.Show("Please Fill All The Assocaited Feilds");
+                        MessageBox.Show("Please Fill All The Assocaited Feilds","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
 
 
@@ -80,7 +80,7 @@ namespace Cryptography
                         else
                         {
                             textBox_PrimeNO_1.Text = "";
-                            MessageBox.Show(" You didn't Enter A Prime Number , Please TRY AGAIN");
+                            MessageBox.Show(" You didn't Enter A Prime Number Please TRY AGAIN","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                             return;
                         }
 
@@ -97,7 +97,7 @@ namespace Cryptography
                         else
                         {
                             textBox_PrimeNo_2.Text = "";
-                            MessageBox.Show("You didn't Enter A Prime Number , Please TRY AGAIN");
+                            MessageBox.Show("You didn't Enter A Prime Numbe Please TRY AGAIN","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                             return;
                         }
 
@@ -117,7 +117,7 @@ namespace Cryptography
                         else
                         {
                             textBox_Value_of_E.Text = "";
-                            MessageBox.Show("Please Enter a Relative Prime Number");
+                            MessageBox.Show("Please Enter a Relative Prime Number","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                             return;
                         }
 
@@ -140,7 +140,7 @@ namespace Cryptography
                 
             catch(Exception ENC_VALUE)
             {
-                MessageBox.Show(ENC_VALUE.Message);
+                MessageBox.Show(ENC_VALUE.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -158,7 +158,7 @@ namespace Cryptography
 
             catch (Exception SAVE)
             {
-                MessageBox.Show(SAVE.Message);
+                MessageBox.Show(SAVE.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
         }
@@ -185,7 +185,7 @@ namespace Cryptography
 
             catch (Exception ENC_SELECT)
                 {
-                    MessageBox.Show(ENC_SELECT.Message);
+                    MessageBox.Show(ENC_SELECT.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
 
         }
@@ -202,7 +202,7 @@ namespace Cryptography
 
             catch (Exception ENC_SAVE)
             {
-                MessageBox.Show(ENC_SAVE.Message);
+                MessageBox.Show(ENC_SAVE.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -233,7 +233,7 @@ namespace Cryptography
 
             catch(Exception ENC_STORE)
             {
-                MessageBox.Show(ENC_STORE.Message);
+                MessageBox.Show(ENC_STORE.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
         }
@@ -260,7 +260,7 @@ namespace Cryptography
 
                 // Converting Image Back to Bitmap from Byte 
                 // Also Fuunction called to handle the # Sign 
-                decryption_pictureBox.Image = Cryptography.Conversion.Conversion_To_BITMAP_IMAGE(Cryptography.Handler.HASH_SIGN_HANDLER(decrypt_textfile));
+                decryption_pictureBox.Image = Cryptography.Conversion.Conversion_To_BITMAP_IMAGE(Cryptography.Handler.SIGN_HANDLER(decrypt_textfile));
 
                 MessageBox.Show("Decryption  Successfully Performed ");
 
@@ -273,7 +273,7 @@ namespace Cryptography
 
             catch (Exception DEC)
             {
-                MessageBox.Show(DEC.Message);
+                MessageBox.Show(DEC.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -303,7 +303,6 @@ namespace Cryptography
                 // To Decrypt Values Conveted in Char One By One in 
                 for (; i < Arr.Length; i++)
                 {
-                    Application.DoEvents();
 
                     temp = "";
 
@@ -372,7 +371,7 @@ namespace Cryptography
 
             catch (Exception ENC)
             {
-                MessageBox.Show(ENC.Message);
+                MessageBox.Show(ENC.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
 
@@ -452,7 +451,7 @@ namespace Cryptography
 
                     if (textBox_Value_of_D.Text == "" || textBox_Value_Of_N.Text == "")
                     {
-                        MessageBox.Show("Please Fill All The Assocaited Feilds");
+                        MessageBox.Show("Please Fill All The Assocaited Feilds","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
 
 
@@ -472,7 +471,7 @@ namespace Cryptography
                         else
                         {
                             textBox_Value_of_D.Text = "";
-                            MessageBox.Show("You didn't Enter A Number Greater Than Zero  , Please TRY AGAIN");
+                            MessageBox.Show("You didn't Enter A Number Greater Than Zero Please TRY AGAIN","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                             return;
                         }
 
@@ -489,7 +488,7 @@ namespace Cryptography
                         else
                         {
                             textBox_Value_Of_N.Text = "";
-                            MessageBox.Show("You didn't Enter A Number Greater Than Zero  , Please TRY AGAIN");
+                            MessageBox.Show("You didn't Enter A Number Greater Than ZeroPlease TRY AGAIN","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                             return;
                         }
 
@@ -511,7 +510,7 @@ namespace Cryptography
 
             catch (Exception DEC_VALUES)
             {
-                MessageBox.Show(DEC_VALUES.Message);
+                MessageBox.Show(DEC_VALUES.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
 

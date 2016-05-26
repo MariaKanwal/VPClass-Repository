@@ -10,7 +10,7 @@ namespace Cryptography
     class Handler
     {
         // Function Written To manage the "-" sign that was included in the Encrytion Of Image to increase Readability
-        public static byte[] HASH_SIGN_HANDLER(string input_text)
+        public static byte[] SIGN_HANDLER(string input_text)
         {
 
             //SPLIT function used to separate based on "  - "Sign 
